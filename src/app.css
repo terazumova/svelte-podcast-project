@@ -4,9 +4,44 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-SemiBold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
 html,
 body {
-    font-family: system-ui, sans-serif;
+    font-family: 'SourceSerif', sans-serif;
 }
 
 .container {
