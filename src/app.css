@@ -39,6 +39,14 @@
     font-weight: 700;
 }
 
+:root {
+    --black: #222222;
+    --purple: #7247CA;
+    --light-grey: #F5F5F7;
+    --grey: #979797;
+    --dark-grey: #555555;
+}
+
 html,
 body {
     font-family: 'SourceSerif', sans-serif;
@@ -47,4 +55,5 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    color: var(--black);
 }
