@@ -1,0 +1,55 @@
+<script>
+	import ArrowDown from '$lib/icons/ArrowDown.svelte';
+	import Heart from '$lib/icons/Heart.svelte';
+	import Search from '$lib/icons/Search.svelte';
+</script>
+
+<header class="header">
+	<div class="container">
+		<img src="/logo.svg" alt="Logo" class="logo" />
+		<nav>
+			<ul class="navigation">
+				<li class="navigation__link"><a href="/">Episodes <ArrowDown /></a></li>
+				<li class="navigation__link"><a href="/">Blog</a></li>
+				<li class="navigation__link"><a href="/">Contact</a></li>
+				<li class="navigation__link navigation__link_highlighted">
+					<a href="/"><Heart /> Donate</a>
+				</li>
+				<li class="navigation__link"><a href="/"><Search /></a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.header {
+		padding: 39px 150px;
+		border-bottom: 1px solid var(--light-grey-1);
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.navigation {
+		display: flex;
+		align-items: center;
+		list-style-type: none;
+		list-style: none;
+		gap: 39px;
+	}
+
+	.navigation__link a {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		color: var(--black);
+		text-decoration: none;
+	}
+
+	.navigation__link_highlighted a {
+		color: var(--purple);
+	}
+</style>

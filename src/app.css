@@ -42,7 +42,8 @@
 :root {
     --black: #222222;
     --purple: #7247CA;
-    --light-grey: #F5F5F7;
+    --light-grey-1: #EAEAEE;
+    --light-grey-2: #F5F5F7;
     --grey: #979797;
     --dark-grey: #555555;
 }
@@ -50,6 +51,7 @@
 html,
 body {
     font-family: 'SourceSerif', sans-serif;
+    box-sizing: border-box;
 }
 
 .container {
