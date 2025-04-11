@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import ArrowDown from '$lib/icons/ArrowDown.svelte';
 	import Heart from '$lib/icons/Heart.svelte';
 	import Search from '$lib/icons/Search.svelte';
@@ -22,15 +22,12 @@
 </header>
 
 <style>
-	.header {
-		padding: 39px 150px;
-		border-bottom: 1px solid var(--light-grey-1);
-	}
-
 	.container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		padding: 39px 150px;
+		border-bottom: 1px solid var(--light-grey-1);
 	}
 
 	.navigation {

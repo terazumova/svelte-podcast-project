@@ -1,14 +1,10 @@
-<script>
-	export let className = '';
-</script>
-
 <svg
 	width="13"
 	height="12"
 	viewBox="0 0 13 12"
-	class={className}
-	fill="currentColor"
 	xmlns="http://www.w3.org/2000/svg"
+	{...$$props}
+	fill="currentColor"
 >
 	<path
 		fill-rule="evenodd"
