@@ -32,6 +32,7 @@
 	.footer {
 		max-width: 670px;
 		margin: auto;
+        padding-bottom: 39px;
 	}
 
 	.container {
@@ -81,7 +82,7 @@
 		gap: 24px;
 	}
 
-    .social__button {
-        cursor: pointer;
-    }
+	.social__button {
+		cursor: pointer;
+	}
 </style>
