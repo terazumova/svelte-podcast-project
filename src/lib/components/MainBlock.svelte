@@ -29,7 +29,7 @@
 		max-width: 670px;
 		margin: 0 auto;
 		text-align: center;
-		padding: 96px 0;
+		padding-top: 96px;
 	}
 
 	.main-component__image {

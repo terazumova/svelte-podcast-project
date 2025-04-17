@@ -1,0 +1,46 @@
+<script lang="ts">
+	export let imageUrl: string;
+	export let title: string;
+	export let date: string;
+	export let link: string;
+</script>
+
+<div class="post-item">
+	<img class="post-item__image" src={imageUrl} alt={title} />
+	<div class="post-item__content">
+		<h3 class="title">{title}</h3>
+		<p class="date">{date}</p>
+		<a class="link" href={link} target="_blank" rel="noopener noreferrer">Read more</a>
+	</div>
+</div>
+
+<style>
+	.post-item {
+		display: flex;
+		align-items: start;
+		gap: 39px;
+	}
+
+	.post-item__image {
+		width: 180px;
+		height: 180px;
+		object-fit: cover;
+		border-radius: 4px;
+	}
+
+	.post-item__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.title {
+		font-size: 21px;
+        margin-bottom: 16px;
+	}
+
+	.date {
+		color: var(--grey);
+		font-size: 14px;
+        margin-bottom: 39px;
+	}
+</style>

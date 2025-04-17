@@ -1,0 +1,47 @@
+<script lang="ts">
+	import PostItem from '$lib/components/posts/PostItem.svelte';
+	import ArrowRight from '$lib/icons/ArrowRight.svelte';
+
+	export let posts: {
+		id: string;
+		imageUrl: string;
+		title: string;
+		date: string;
+		link: string;
+	}[];
+</script>
+
+<section class="post-list">
+	<h2 class="post-list__title">Latest Posts</h2>
+	{#each posts as post (post.id)}
+		<PostItem imageUrl={post.imageUrl} title={post.title} date={post.date} link={post.link} />
+	{/each}
+	<a class="post-list__link" href="/posts" target="_blank" rel="noopener noreferrer"
+		>View Blog <ArrowRight /></a
+	>
+</section>
+
+<style>
+	.post-list {
+		max-width: 670px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		padding-top: 64px;
+	}
+
+	.post-list__title {
+		font-size: 26px;
+		font-weight: 600;
+	}
+
+	.post-list__link {
+		width: fit-content;
+		height: 34px;
+		background-color: var(--light-grey-2);
+		border-radius: 3px;
+		padding: 8px 16px;
+		cursor: pointer;
+	}
+</style>

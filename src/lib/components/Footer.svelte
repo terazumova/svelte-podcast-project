@@ -32,7 +32,7 @@
 	.footer {
 		max-width: 670px;
 		margin: auto;
-        padding-bottom: 39px;
+        padding: 64px 0 39px 0;
 	}
 
 	.container {
