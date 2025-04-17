@@ -1,15 +1,21 @@
 <script lang="ts">
+	import Spotify from '$lib/icons/music/Spotify.svelte';
+	import Soundcloud from '$lib/icons/music/Soundcloud.svelte';
+	import AppleMusic from '$lib/icons/music/AppleMusic.svelte';
+
 	let photoUrl: string = 'CurrentImage.png';
 	let podcastUrl: string = 'CurrentMusic.mp3';
 </script>
 
 <div class="main-component">
 	<div class="main-component__image">
-		<img src={photoUrl} alt='How to rapidly test any experience!' class="main-component__image--photo" />
+		<img
+			src={photoUrl}
+			alt="How to rapidly test any experience!"
+			class="main-component__image--photo"
+		/>
 	</div>
-
 	<h1 class="main-component__title">How to rapidly test any experience!</h1>
-
 	<div class="main-component__player">
 		{#if podcastUrl}
 			<audio controls class="main-component__audio">
@@ -17,6 +23,11 @@
 				Your browser does not support the audio element.
 			</audio>
 		{/if}
+	</div>
+	<div class="main-component__links">
+		<Spotify class="main-component__link" />
+		<Soundcloud class="main-component__link" />
+		<AppleMusic class="main-component__link" />
 	</div>
 </div>
 
@@ -60,5 +71,17 @@
 		width: 100%;
 		border-radius: 8px;
 		margin-top: 1rem;
+	}
+
+	.main-component__links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		padding-top: 39px;
+	}
+
+	.main-component__link {
+		cursor: pointer;
 	}
 </style>
