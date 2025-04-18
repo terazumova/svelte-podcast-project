@@ -31,14 +31,8 @@
 		padding-top: 64px;
 	}
 
-	.post-list__title {
-		font-size: 26px;
-		font-weight: 600;
-	}
-
 	.post-list__link {
 		width: fit-content;
-		height: 34px;
 		background-color: var(--light-grey-2);
 		border-radius: 3px;
 		padding: 8px 16px;

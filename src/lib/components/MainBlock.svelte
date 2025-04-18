@@ -24,11 +24,11 @@
 			</audio>
 		{/if}
 	</div>
-	<div class="main-component__links">
+	<ul class="main-component__links">
 		<Spotify class="main-component__link" />
 		<Soundcloud class="main-component__link" />
 		<AppleMusic class="main-component__link" />
-	</div>
+	</ul>
 </div>
 
 <style>
@@ -81,7 +81,7 @@
 		padding-top: 39px;
 	}
 
-	.main-component__link {
+	:global(.main-component__link) {
 		cursor: pointer;
 	}
 </style>

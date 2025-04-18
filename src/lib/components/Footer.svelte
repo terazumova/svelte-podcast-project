@@ -21,11 +21,11 @@
 			<CustomInput type="email" placeholder="Email  adress..." />
 		</form>
 	</div>
-	<div class="social">
+	<ul class="social">
 		<Facebook class="social__button" />
 		<Github class="social__button" />
 		<Twitter class="social__button" />
-	</div>
+	</ul>
 </footer>
 
 <style>
@@ -82,7 +82,7 @@
 		gap: 24px;
 	}
 
-	.social__button {
+	:global(.social__button) {
 		cursor: pointer;
 	}
 </style>
