@@ -3,6 +3,7 @@
 	import Github from '$lib/icons/social/Github.svelte';
 	import Twitter from '$lib/icons/social/Twitter.svelte';
 
+	export let id: string;
 	export let imageUrl: string;
 	export let name: string;
 	export let position: string;
@@ -12,7 +13,7 @@
 	<img class="team-member__image" src={imageUrl} alt={name} />
 	<div class="team-member__content">
 		<p class="position">{position}</p>
-		<h3 class="name">{name}</h3>
+		<a class="name" href="/team/{id}" target="_blank" rel="noopener noreferrer">{name}</a>
 		<ul class="links">
 			<Linkedin class="links__item" />
 			<Github class="links__item" />
@@ -65,7 +66,7 @@
 
 	:global(.links__item) {
 		width: 12px;
-    	height: 12px;
+		height: 12px;
 		cursor: pointer;
 	}
 </style>

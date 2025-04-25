@@ -8,11 +8,17 @@
 <footer class="footer">
 	<div class="container">
 		<ul class="navigation">
-			<li class="navigation__link"><a href="/">Episodes</a></li>
-			<li class="navigation__link"><a href="/">Blog</a></li>
-			<li class="navigation__link"><a href="/">Contact</a></li>
 			<li class="navigation__link">
-				<a href="/">Donate</a>
+				<a href="/episodes" rel="noopener noreferrer">Episodes</a>
+			</li>
+			<li class="navigation__link">
+				<a href="/blog" rel="noopener noreferrer">Blog</a>
+			</li>
+			<li class="navigation__link">
+				<a href="/contact" rel="noopener noreferrer">Contact</a>
+			</li>
+			<li class="navigation__link">
+				<a href="/donate" rel="noopener noreferrer">Donate</a>
 			</li>
 		</ul>
 		<form class="newsletter">
@@ -32,7 +38,7 @@
 	.footer {
 		max-width: 670px;
 		margin: auto;
-        padding: 64px 0 39px 0;
+		padding: 64px 0 39px 0;
 	}
 
 	.container {

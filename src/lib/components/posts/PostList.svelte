@@ -14,9 +14,9 @@
 <section class="post-list">
 	<h2 class="post-list__title">Latest Posts</h2>
 	{#each posts as post (post.id)}
-		<PostItem imageUrl={post.imageUrl} title={post.title} date={post.date} link={post.link} />
+		<PostItem {...post} />
 	{/each}
-	<a class="post-list__link" href="/posts" target="_blank" rel="noopener noreferrer"
+	<a class="post-list__link" href="/blog" target="_blank" rel="noopener noreferrer"
 		>View Blog <ArrowRight /></a
 	>
 </section>

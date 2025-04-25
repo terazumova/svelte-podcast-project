@@ -6,14 +6,18 @@
 
 <header class="header">
 	<div class="container">
-		<img src="/logo.svg" alt="Logo" class="logo" />
+		<a href="/" rel="noopener noreferrer"><img src="/logo.svg" alt="Logo" class="logo" /></a>
 		<nav>
 			<ul class="navigation">
 				<li class="navigation__link"><a href="/">Episodes <ArrowDown /></a></li>
-				<li class="navigation__link"><a href="/">Blog</a></li>
-				<li class="navigation__link"><a href="/">Contact</a></li>
+				<li class="navigation__link">
+					<a href="/blog" rel="noopener noreferrer">Blog</a>
+				</li>
+				<li class="navigation__link">
+					<a href="/contact" rel="noopener noreferrer">Contact</a>
+				</li>
 				<li class="navigation__link navigation__link_highlighted">
-					<a href="/"><Heart /> Donate</a>
+					<a href="/donate" rel="noopener noreferrer"><Heart /> Donate</a>
 				</li>
 				<li class="navigation__link"><a href="/"><Search /></a></li>
 			</ul>
