@@ -1,4 +1,4 @@
-<main class="not-found">
+<div class="not-found">
 	<p class="not-found__error">404</p>
 	<h1 class="not-found__title">Page not found!</h1>
 	<p class="not-found__description">
@@ -6,7 +6,7 @@
 		start again.
 	</p>
 	<a href="/">HOMEPAGE</a>
-</main>
+</div>
 
 <style>
 	.not-found {
