@@ -3,19 +3,21 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { Snippet } from 'svelte';
+	import type { PageData } from './$types';
 
 	type Props = {
 		children: Snippet;
+		data: PageData;
 	};
 
-	let { children }: Props = $props();
+	let { children, data }: Props = $props();
 </script>
 
 <Header />
 <main class="container">
 	{@render children()}
 </main>
-<Footer />
+<Footer {data} />
 
 <style>
 	.container {

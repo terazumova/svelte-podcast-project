@@ -1,8 +1,18 @@
 <script lang="ts">
-	import CustomInput from '$lib/components/common/CustomInput.svelte';
 	import Facebook from '$lib/icons/social/Facebook.svelte';
 	import Github from '$lib/icons/social/Github.svelte';
 	import Twitter from '$lib/icons/social/Twitter.svelte';
+	import ArrowRight from '$lib/icons/ArrowRight.svelte';
+
+	import { superForm } from 'sveltekit-superforms/client';
+	import type { LayoutData } from '../../routes/$types';
+
+	type Props = {
+		data: LayoutData;
+	};
+
+	let { data }: Props = $props();
+	const { form, errors, message, enhance } = superForm(data.form);
 </script>
 
 <footer class="footer">
@@ -21,10 +31,28 @@
 				<a href="/donate" rel="noopener noreferrer">Donate</a>
 			</li>
 		</ul>
-		<form class="newsletter">
+		<form class="newsletter" action="subscribe" method="post" use:enhance>
 			<p class="newsletter__title">Newsletter</p>
 			<p class="newsletter__description">Sign up now; get closer to our action.</p>
-			<CustomInput type="email" placeholder="Email  adress..." />
+			<div class="custom-input">
+				<input
+					id="email"
+					name="email"
+					class="custom-input__field"
+					type="email"
+					placeholder="Email  address..."
+					bind:value={$form.email}
+				/>
+				<button class="custom-input__button" type="submit">
+					<ArrowRight />
+				</button>
+			</div>
+			{#if $errors.email}
+				<p class="newsletter__message error">{$errors.email}</p>
+			{/if}
+			{#if $message}
+				<p class="newsletter__message message">{$message}</p>
+			{/if}
 		</form>
 	</div>
 	<ul class="social">
@@ -90,5 +118,62 @@
 
 	:global(.social__button) {
 		cursor: pointer;
+	}
+
+	.custom-input {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		border-radius: 4px;
+		border: none;
+		background-color: var(--light-grey-2);
+		padding-right: 3px;
+	}
+
+	.custom-input:focus {
+		border: 1px solid var(--purple);
+		outline: none;
+	}
+
+	.custom-input:disabled {
+		background-color: var(--grey);
+		cursor: not-allowed;
+	}
+
+	.custom-input__field {
+		font-size: 12px;
+		font-weight: 400;
+		padding: 14px 0 14px 14px;
+		background-color: transparent;
+		border: none;
+		width: 100%;
+	}
+
+	.custom-input__field:focus {
+		outline: none;
+	}
+
+	.custom-input__button {
+		border: none;
+		background-color: var(--purple);
+		color: var(--white);
+		border-radius: 4px;
+		min-width: 36px;
+		height: 36px;
+		cursor: pointer;
+	}
+
+	.newsletter__message {
+		font-size: 12px;
+		font-weight: 400;
+		padding-top: 8px;
+	}
+
+	.error {
+		color: var(--red);
+	}
+
+	.message {
+		color: var(--green);
 	}
 </style>
