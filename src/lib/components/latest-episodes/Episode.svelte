@@ -1,11 +1,8 @@
 <script lang="ts">
 	import Play from '$lib/icons/Play.svelte';
+	import type { EpisodeType } from '$lib/types/types';
 
-	export let topic: string;
-	export let date: string;
-	export let title: string;
-	export let description: string;
-	export let link: string;
+	const { id, topic, title, date, description }: EpisodeType = $props();
 </script>
 
 <div class="episode">
@@ -14,7 +11,7 @@
 	</div>
 	<h3 class="episodes__title">{title}</h3>
 	<p class="episodes__description">{description}</p>
-	<a class="episodes__link" href={link} target="_blank" rel="noopener noreferrer"
+	<a class="episodes__link" href={`/episode/${id}`} target="_blank" rel="noopener noreferrer"
 		><Play /> listen now</a
 	>
 </div>

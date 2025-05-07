@@ -1,14 +1,8 @@
 <script lang="ts">
 	import Episode from '$lib/components/latest-episodes/Episode.svelte';
+	import type { EpisodeType } from '$lib/types/types';
 
-	export let episodes: {
-		id: string;
-		topic: string;
-		date: string;
-		title: string;
-		description: string;
-		link: string;
-	}[];
+	export let episodes: EpisodeType[];
 </script>
 
 <section class="episodes-list">

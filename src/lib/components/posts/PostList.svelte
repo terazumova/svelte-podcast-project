@@ -2,13 +2,9 @@
 	import PostItem from '$lib/components/posts/PostItem.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 
-	export let posts: {
-		id: string;
-		imageUrl: string;
-		title: string;
-		date: string;
-		link: string;
-	}[];
+	import type { PostType } from '$lib/types/types';
+
+	export let posts: PostType[];
 </script>
 
 <section class="post-list">

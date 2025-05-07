@@ -1,8 +1,7 @@
 <script lang="ts">
-	export let imageUrl: string;
-	export let title: string;
-	export let date: string;
-	export let link: string;
+	import type { PostType } from '$lib/types/types';
+
+	const { id, imageUrl, title, date }: PostType = $props();
 </script>
 
 <div class="post-item">
@@ -10,7 +9,7 @@
 	<div class="post-item__content">
 		<h3 class="title">{title}</h3>
 		<p class="date">{date}</p>
-		<a class="link" href={link} target="_blank" rel="noopener noreferrer">Read more</a>
+		<a class="link" href={`blog/${id}`} target="_blank" rel="noopener noreferrer">Read more</a>
 	</div>
 </div>
 
@@ -35,12 +34,12 @@
 
 	.title {
 		font-size: 21px;
-        margin-bottom: 16px;
+		margin-bottom: 16px;
 	}
 
 	.date {
 		color: var(--grey);
 		font-size: 14px;
-        margin-bottom: 39px;
+		margin-bottom: 39px;
 	}
 </style>
