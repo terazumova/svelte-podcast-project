@@ -14,6 +14,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model TeamMember {
+  id             Int     @id @default(autoincrement())
+  name           String
+  position       String
+  imageUrl       String
+  showOnMainPage Boolean @default(false)
+  linkedinLink   String
+  githubLink     String
+  twitterLink    String
+}
+
 model Subscription {
   id        Int      @id @default(autoincrement())
   email     String   @unique

@@ -2,11 +2,9 @@
 	import Linkedin from '$lib/icons/social/Linkedin.svelte';
 	import Github from '$lib/icons/social/Github.svelte';
 	import Twitter from '$lib/icons/social/Twitter.svelte';
+	import type { TeamMemberType } from '$lib/types/types';
 
-	export let id: string;
-	export let imageUrl: string;
-	export let name: string;
-	export let position: string;
+	const { id, imageUrl, name, position }: TeamMemberType = $props();
 </script>
 
 <div class="team-member">

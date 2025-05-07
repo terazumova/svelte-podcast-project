@@ -1,16 +1,9 @@
 <script lang="ts">
 	import TeamMember from '$lib/components/team/TeamMember.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
+	import type { TeamMemberType } from '$lib/types/types';
 
-	export let team: {
-		id: string;
-		imageUrl: string;
-		name: string;
-		position: string;
-		// linkedinLink: string;
-		// githubLink: string;
-		// twitterLink: string;
-	}[];
+	export let team: TeamMemberType[];
 </script>
 
 <section class="team">
