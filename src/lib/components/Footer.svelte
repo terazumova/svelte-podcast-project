@@ -12,7 +12,7 @@
 	};
 
 	let { data }: Props = $props();
-	const { form, errors, message, enhance } = superForm(data.form);
+	const { form, message, enhance } = superForm(data.form);
 </script>
 
 <footer class="footer">
@@ -39,7 +39,6 @@
 					id="email"
 					name="email"
 					class="custom-input__field"
-					type="email"
 					placeholder="Email  address..."
 					bind:value={$form.email}
 				/>
@@ -47,11 +46,14 @@
 					<ArrowRight />
 				</button>
 			</div>
-			{#if $errors.email}
-				<p class="newsletter__message error">{$errors.email}</p>
-			{/if}
 			{#if $message}
-				<p class="newsletter__message message">{$message}</p>
+				<p
+					class="newsletter__message"
+					class:success={$message.status == 'success'}
+					class:error={$message.status == 'error'}
+				>
+					{$message.text}
+				</p>
 			{/if}
 		</form>
 	</div>
@@ -173,7 +175,7 @@
 		color: var(--red);
 	}
 
-	.message {
+	.success {
 		color: var(--green);
 	}
 </style>
