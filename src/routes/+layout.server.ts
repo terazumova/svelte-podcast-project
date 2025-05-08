@@ -1,6 +1,5 @@
 import { superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
-
 import { subscriptionSchema } from '$lib/schemas/subscription';
 import type { LayoutServerLoad } from './$types';
 

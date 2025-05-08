@@ -3,14 +3,13 @@
 	import Soundcloud from '$lib/icons/music/Soundcloud.svelte';
 	import AppleMusic from '$lib/icons/music/AppleMusic.svelte';
 
-	let photoUrl: string = 'CurrentImage.png';
-	let podcastUrl: string = 'CurrentMusic.mp3';
+	let podcastUrl: string = 'TempAudio.mp3';
 </script>
 
 <div class="main-component">
 	<div class="main-component__image">
 		<img
-			src={photoUrl}
+			src="https://placedog.net/500?random"
 			alt="How to rapidly test any experience!"
 			class="main-component__image--photo"
 		/>
@@ -37,10 +36,7 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		max-width: 670px;
-		margin: 0 auto;
-		text-align: center;
-		padding-top: 96px;
+		padding-top: 32px;
 	}
 
 	.main-component__image {

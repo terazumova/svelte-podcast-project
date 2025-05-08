@@ -1,13 +1,14 @@
 <script lang="ts">
 	import Play from '$lib/icons/Play.svelte';
 	import type { EpisodeType } from '$lib/types/types';
+	import { formatDate } from '$lib/utils/date';
 
 	const { id, topic, title, date, description }: EpisodeType = $props();
 </script>
 
 <div class="episode">
 	<div class="episodes__tags">
-		{topic} | {date}
+		{topic} | {formatDate(date)}
 	</div>
 	<h3 class="episodes__title">{title}</h3>
 	<p class="episodes__description">{description}</p>

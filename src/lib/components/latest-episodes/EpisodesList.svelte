@@ -13,11 +13,8 @@
 
 <style>
 	.episodes-list {
-		max-width: 670px;
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		gap: 70px;
-		padding-top: 64px;
+		gap: 51px;
 	}
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PostType } from '$lib/types/types';
+	import { formatDate } from '$lib/utils/date';
 
 	const { id, imageUrl, title, date }: PostType = $props();
 </script>
@@ -8,7 +9,7 @@
 	<img class="post-item__image" src={imageUrl} alt={title} />
 	<div class="post-item__content">
 		<h3 class="title">{title}</h3>
-		<p class="date">{date}</p>
+		<p class="date">{formatDate(date)}</p>
 		<a class="link" href={`blog/${id}`} target="_blank" rel="noopener noreferrer">Read more</a>
 	</div>
 </div>

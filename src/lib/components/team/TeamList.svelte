@@ -20,16 +20,14 @@
 
 <style>
 	.team {
-		max-width: 670px;
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		gap: 39px;
-		padding-top: 64px;
 	}
 
 	.team-list {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 69px;
 	}
 

@@ -1,15 +1,14 @@
-<script>
+<script lang="ts">
 	import Episode from '$lib/components/latest-episodes/Episode.svelte';
+	import type { PageData } from './$types';
+
+	type Props = {
+		data: PageData;
+	};
+
+	let { data }: Props = $props();
 </script>
 
-<Episode
-	{...{
-		id: 'episode1',
-		topic: 'Business',
-		date: 'Jan 18, 2021',
-		title: '23 - How to rapidly test any experience!',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
-		link: '/episodes/1'
-	}}
-/>
+{#if data.episode}
+	<Episode {...data.episode} />
+{/if}

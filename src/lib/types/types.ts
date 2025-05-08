@@ -1,7 +1,7 @@
 export type EpisodeType = {
 	id: number;
 	topic: string;
-	date: string;
+	date: Date;
 	title: string;
 	description: string;
 };
@@ -10,7 +10,7 @@ export type PostType = {
 	id: number;
 	imageUrl: string;
 	title: string;
-	date: string;
+	date: Date;
 };
 
 export type TeamMemberType = {
