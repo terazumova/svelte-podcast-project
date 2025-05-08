@@ -8,7 +8,7 @@
 </script>
 
 <div class="team-member">
-	<img class="team-member__image" src={imageUrl} alt={name} />
+	<img class="team-member__image" src={imageUrl} alt={name} width="300" height="300" />
 	<div class="team-member__content">
 		<p class="position">{position}</p>
 		<a class="name" href="/team/{id}" target="_blank" rel="noopener noreferrer">{name}</a>

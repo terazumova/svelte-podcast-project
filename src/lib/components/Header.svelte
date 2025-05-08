@@ -6,7 +6,9 @@
 
 <header class="header">
 	<div class="container">
-		<a href="/" rel="noopener noreferrer"><img src="/logo.svg" alt="Logo" class="logo" /></a>
+		<a href="/" rel="noopener noreferrer"
+			><img src="/logo.svg" alt="Logo" class="logo" width="81" height="28" /></a
+		>
 		<nav>
 			<ul class="navigation">
 				<li class="navigation__link"><a href="/">Episodes <ArrowDown /></a></li>

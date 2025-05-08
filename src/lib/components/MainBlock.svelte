@@ -12,6 +12,7 @@
 			src="https://placedog.net/500?random"
 			alt="How to rapidly test any experience!"
 			class="main-component__image--photo"
+			width="180" height="180"
 		/>
 	</div>
 	<h1 class="main-component__title">How to rapidly test any experience!</h1>

@@ -6,7 +6,7 @@
 </script>
 
 <div class="post-item">
-	<img class="post-item__image" src={imageUrl} alt={title} />
+	<img class="post-item__image" src={imageUrl} alt={title} width="180" height="180" />
 	<div class="post-item__content">
 		<h3 class="title">{title}</h3>
 		<p class="date">{formatDate(date)}</p>
