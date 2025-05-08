@@ -1,6 +1,6 @@
 node_modules
 
-prisma/*
+prisma/
 !prisma/schema.prisma
 !prisma/seed.ts
 
