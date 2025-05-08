@@ -1,7 +1,6 @@
 <script lang="ts">
 	import PostItem from '$lib/components/posts/PostItem.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
-
 	import type { PostType } from '$lib/types/types';
 
 	export let posts: PostType[];
@@ -19,12 +18,9 @@
 
 <style>
 	.post-list {
-		max-width: 670px;
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		gap: 25px;
-		padding-top: 64px;
 	}
 
 	.post-list__link {

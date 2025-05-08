@@ -83,8 +83,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		list-style-type: none;
-		list-style: none;
 		gap: 9px;
 	}
 

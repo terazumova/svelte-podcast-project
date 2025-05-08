@@ -7,15 +7,15 @@
 </script>
 
 <div class="main-component">
-	<div class="main-component__image">
-		<img
-			src="https://placedog.net/500?random"
-			alt="How to rapidly test any experience!"
-			class="main-component__image--photo"
-			width="180" height="180"
-		/>
-	</div>
-	<h1 class="main-component__title">How to rapidly test any experience!</h1>
+	<img
+		class="main-component__image"
+		src="https://placedog.net/500?random"
+		alt="How to rapidly test any experience!"
+		width="180"
+		height="180"
+	/>
+	<h1 class="sr-only">CastPress</h1>
+	<h2 class="main-component__title">How to rapidly test any experience!</h2>
 	<div class="main-component__player">
 		{#if podcastUrl}
 			<audio controls class="main-component__audio">
@@ -32,10 +32,21 @@
 </div>
 
 <style>
+	.sr-only {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+
 	.main-component {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 39px;
 		width: 100%;
 		padding-top: 32px;
 	}
@@ -43,20 +54,8 @@
 	.main-component__image {
 		width: 100%;
 		max-width: 300px;
-		margin-bottom: 1rem;
-	}
-
-	.main-component__image--photo {
-		width: 100%;
 		border-radius: 8px;
 		object-fit: cover;
-	}
-
-	.main-component__title {
-		font-size: 1.8rem;
-		color: #333;
-		margin-bottom: 1.5rem;
-		font-weight: 600;
 	}
 
 	.main-component__player {
@@ -66,8 +65,6 @@
 
 	.main-component__audio {
 		width: 100%;
-		border-radius: 8px;
-		margin-top: 1rem;
 	}
 
 	.main-component__links {
@@ -75,7 +72,6 @@
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
-		padding-top: 39px;
 	}
 
 	:global(.main-component__link) {
