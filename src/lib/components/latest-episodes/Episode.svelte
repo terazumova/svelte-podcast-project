@@ -12,7 +12,7 @@
 	</div>
 	<h3 class="episodes__title">{title}</h3>
 	<p class="episodes__description">{description}</p>
-	<a class="episodes__link" href={`/episode/${id}`} target="_blank" rel="noopener noreferrer"
+	<a class="episodes__link" href={`/episodes/${id}`} target="_blank" rel="noopener noreferrer"
 		><Play /> listen now</a
 	>
 </div>
