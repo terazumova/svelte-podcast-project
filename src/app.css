@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Light.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-SemiBold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'SourceSerif';
+    src: url('/fonts/SourceSerif4-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+
+:root {
+    --black: #222222;
+    --white: #FFFFFF;
+    --purple: #7247CA;
+    --light-grey-1: #EAEAEE;
+    --light-grey-2: #F5F5F7;
+    --grey: #979797;
+    --dark-grey: #555555;
+    --red: #B00020;
+    --green: #4BB543;
+}
+
+html,
+body {
+    font-family: 'SourceSerif', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1, h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: var(--black);
+}
