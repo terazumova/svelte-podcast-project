@@ -28,7 +28,7 @@
 	.episodes__tags {
 		font-size: 14px;
 		font-weight: 400;
-		color: var(--grey);
+		color: var(--color-grey);
 	}
 
 	.episodes__title {
@@ -37,13 +37,13 @@
 	}
 
 	.episodes__description {
-		color: var(--dark-grey);
+		color: var(--color-dark-grey);
 		font-size: 16px;
 		font-weight: 400;
 	}
 
 	.episodes__link {
-		color: var(--purple);
+		color: var(--color-purple);
 		text-transform: uppercase;
 		display: flex;
 		align-items: center;

@@ -25,7 +25,7 @@
 	.not-found__description {
         margin: auto;
 		max-width: 450px;
-		color: var(--dark-grey);
+		color: var(--color-dark-grey);
 		font-size: 16px;
 		font-weight: 400;
 	}

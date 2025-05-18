@@ -76,7 +76,7 @@
 		align-items: start;
 		justify-content: space-between;
 		padding: 64px 0 89px;
-		border-top: 1px solid var(--light-grey-1);
+		border-top: 1px solid var(--color-light-grey-1);
 	}
 
 	.navigation {
@@ -87,7 +87,7 @@
 	}
 
 	.navigation__link a {
-		color: var(--black);
+		color: var(--color-black);
 		text-decoration: none;
 	}
 
@@ -126,17 +126,17 @@
 		width: 100%;
 		border-radius: 4px;
 		border: none;
-		background-color: var(--light-grey-2);
+		background-color: var(--color-light-grey-2);
 		padding-right: 3px;
 	}
 
 	.custom-input:focus {
-		border: 1px solid var(--purple);
+		border: 1px solid var(--color-purple);
 		outline: none;
 	}
 
 	.custom-input:disabled {
-		background-color: var(--grey);
+		background-color: var(--color-grey);
 		cursor: not-allowed;
 	}
 
@@ -155,8 +155,8 @@
 
 	.custom-input__button {
 		border: none;
-		background-color: var(--purple);
-		color: var(--white);
+		background-color: var(--color-purple);
+		color: var(--color-white);
 		border-radius: 4px;
 		min-width: 36px;
 		height: 36px;
@@ -170,10 +170,10 @@
 	}
 
 	.error {
-		color: var(--red);
+		color: var(--color-red);
 	}
 
 	.success {
-		color: var(--green);
+		color: var(--color-green);
 	}
 </style>

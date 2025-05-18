@@ -40,15 +40,15 @@
 }
 
 :root {
-    --black: #222222;
-    --white: #FFFFFF;
-    --purple: #7247CA;
-    --light-grey-1: #EAEAEE;
-    --light-grey-2: #F5F5F7;
-    --grey: #979797;
-    --dark-grey: #555555;
-    --red: #B00020;
-    --green: #4BB543;
+    --color-black: #222222;
+    --color-white: #FFFFFF;
+    --color-purple: #7247CA;
+    --color-light-grey-1: #EAEAEE;
+    --color-light-grey-2: #F5F5F7;
+    --color-grey: #979797;
+    --color-dark-grey: #555555;
+    --color-red: #B00020;
+    --color-green: #4BB543;
 }
 
 html,
@@ -58,7 +58,7 @@ body {
 }
 
 a {
-    color: var(--purple);
+    color: var(--color-purple);
     text-decoration: none;
 }
 
@@ -74,5 +74,5 @@ h1, h2 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    color: var(--black);
+    color: var(--color-black);
 }

@@ -33,7 +33,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 39px 150px;
-		border-bottom: 1px solid var(--light-grey-1);
+		border-bottom: 1px solid var(--color-light-grey-1);
 	}
 
 	.navigation {
@@ -48,11 +48,11 @@
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		color: var(--black);
+		color: var(--color-black);
 		text-decoration: none;
 	}
 
 	.navigation__link_highlighted a {
-		color: var(--purple);
+		color: var(--color-purple);
 	}
 </style>

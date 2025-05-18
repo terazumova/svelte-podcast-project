@@ -33,7 +33,7 @@
 
 	.team__link {
 		width: fit-content;
-		background-color: var(--light-grey-2);
+		background-color: var(--color-light-grey-2);
 		border-radius: 3px;
 		padding: 8px 16px;
 		cursor: pointer;

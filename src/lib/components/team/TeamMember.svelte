@@ -25,7 +25,7 @@
 		display: flex;
 		flex-direction: column;
 		border-radius: 4px;
-		background-color: var(--light-grey-2);
+		background-color: var(--color-light-grey-2);
 		min-height: 435px;
 	}
 
@@ -45,7 +45,7 @@
 
 	.position {
 		text-transform: uppercase;
-		color: var(--purple);
+		color: var(--color-purple);
 		font-size: 12px;
 		font-weight: 600;
 		margin-bottom: 8px;
@@ -59,7 +59,7 @@
 		display: flex;
 		gap: 16px;
 		margin-top: auto;
-		color: var(--dark-grey);
+		color: var(--color-dark-grey);
 	}
 
 	:global(.links__item) {

@@ -39,7 +39,7 @@
 	}
 
 	.date {
-		color: var(--grey);
+		color: var(--color-grey);
 		font-size: 14px;
 		margin-bottom: 39px;
 	}
