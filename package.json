@@ -34,6 +34,7 @@
 		"vite": "^6.2.5"
 	},
 	"dependencies": {
+		"@fontsource/source-serif-pro": "^5.2.5",
 		"prisma": "^6.7.0"
 	}
 }

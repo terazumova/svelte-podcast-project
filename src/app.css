@@ -1,78 +1,42 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-@font-face {
-    font-family: 'SourceSerif';
-    src: url('/fonts/SourceSerif4-Light.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: 'SourceSerif';
-    src: url('/fonts/SourceSerif4-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'SourceSerif';
-    src: url('/fonts/SourceSerif4-Medium.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: 'SourceSerif';
-    src: url('/fonts/SourceSerif4-SemiBold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: 'SourceSerif';
-    src: url('/fonts/SourceSerif4-Bold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 700;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :root {
-    --color-black: #222222;
-    --color-white: #FFFFFF;
-    --color-purple: #7247CA;
-    --color-light-grey-1: #EAEAEE;
-    --color-light-grey-2: #F5F5F7;
-    --color-grey: #979797;
-    --color-dark-grey: #555555;
-    --color-red: #B00020;
-    --color-green: #4BB543;
+	--color-black: #222222;
+	--color-white: #ffffff;
+	--color-purple: #7247ca;
+	--color-light-grey-1: #eaeaee;
+	--color-light-grey-2: #f5f5f7;
+	--color-grey: #979797;
+	--color-dark-grey: #555555;
+	--color-red: #b00020;
+	--color-green: #4bb543;
 }
 
-html,
 body {
-    font-family: 'SourceSerif', sans-serif;
-    box-sizing: border-box;
+	font-family: 'Source Serif Pro', serif;
 }
 
 a {
-    color: var(--color-purple);
-    text-decoration: none;
+	color: var(--color-purple);
+	text-decoration: none;
 }
 
 ul {
-    list-style-type: none;
+	list-style-type: none;
 }
 
-h1, h2 {
-    font-size: 26px;
-    font-weight: 600;
+h1,
+h2 {
+	font-size: 26px;
+	font-weight: 600;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    color: var(--color-black);
+	max-width: 1200px;
+	margin: 0 auto;
+	color: var(--color-black);
 }
