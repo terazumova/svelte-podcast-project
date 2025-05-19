@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma-app/client';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -80,3 +80,7 @@ async function main() {
 main()
 	.catch((e) => console.error(e))
 	.finally(() => prisma.$disconnect());
+
+//main убрать, сделать все через try catch, добавить console log, в catch process.exit(?), обновить типы
+//audio - String
+// добавить slug, чтобы использовать в server.ts
