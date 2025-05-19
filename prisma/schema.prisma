@@ -10,7 +10,7 @@ datasource db {
 model Episode {
   id          String   @id @default(uuid())
   topic       String
-  date        DateTime
+  date        DateTime @default(now())
   title       String
   description String
 }
@@ -19,7 +19,7 @@ model Post {
   id       String   @id @default(uuid())
   imageUrl String
   title    String
-  date     DateTime
+  date     DateTime @default(now())
 }
 
 model TeamMember {
