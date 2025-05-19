@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Episode {
-  id          Int      @id @default(autoincrement())
+  id          String   @id @default(uuid())
   topic       String
   date        DateTime
   title       String
@@ -16,14 +16,14 @@ model Episode {
 }
 
 model Post {
-  id       Int      @id @default(autoincrement())
+  id       String   @id @default(uuid())
   imageUrl String
   title    String
   date     DateTime
 }
 
 model TeamMember {
-  id             Int     @id @default(autoincrement())
+  id             String  @id @default(uuid())
   name           String
   position       String
   imageUrl       String
@@ -34,7 +34,7 @@ model TeamMember {
 }
 
 model Subscription {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   email     String   @unique
   createdAt DateTime @default(now())
 }
