@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Episode from '$lib/components/latest-episodes/Episode.svelte';
-	import type { EpisodeType } from '$lib/types/types';
+	import type { EpisodeType } from '$lib/types';
 
 	export let episodes: EpisodeType[];
 </script>
@@ -13,8 +13,7 @@
 
 <style>
 	.episodes-list {
-		display: flex;
-		flex-direction: column;
+		display: grid;
 		gap: 51px;
 	}
 </style>
