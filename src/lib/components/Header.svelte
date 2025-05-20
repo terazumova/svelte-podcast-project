@@ -13,13 +13,13 @@
 			<ul class="navigation">
 				<li class="navigation__link"><a href="/">Episodes <ArrowDown /></a></li>
 				<li class="navigation__link">
-					<a href="/blog" rel="noopener noreferrer">Blog</a>
+					<a href="/blog">Blog</a>
 				</li>
 				<li class="navigation__link">
-					<a href="/contact" rel="noopener noreferrer">Contact</a>
+					<a href="/contact">Contact</a>
 				</li>
 				<li class="navigation__link navigation__link_highlighted">
-					<a href="/donate" rel="noopener noreferrer"><Heart /> Donate</a>
+					<a href="/donate"><Heart /> Donate</a>
 				</li>
 				<li class="navigation__link"><a href="/"><Search /></a></li>
 			</ul>

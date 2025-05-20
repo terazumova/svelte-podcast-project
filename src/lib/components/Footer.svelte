@@ -19,16 +19,16 @@
 	<div class="container">
 		<ul class="navigation">
 			<li class="navigation__link">
-				<a href="/episodes" rel="noopener noreferrer">Episodes</a>
+				<a href="/episodes">Episodes</a>
 			</li>
 			<li class="navigation__link">
-				<a href="/blog" rel="noopener noreferrer">Blog</a>
+				<a href="/blog">Blog</a>
 			</li>
 			<li class="navigation__link">
-				<a href="/contact" rel="noopener noreferrer">Contact</a>
+				<a href="/contact">Contact</a>
 			</li>
 			<li class="navigation__link">
-				<a href="/donate" rel="noopener noreferrer">Donate</a>
+				<a href="/donate">Donate</a>
 			</li>
 		</ul>
 		<form class="newsletter" action="subscribe" method="post" use:enhance>
