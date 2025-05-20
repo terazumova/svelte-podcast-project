@@ -4,15 +4,15 @@
 	import Twitter from '$lib/icons/social/Twitter.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 
-	import { superForm } from 'sveltekit-superforms/client';
-	import type { LayoutData } from '../../routes/$types';
+	import { superForm, type SuperValidated } from 'sveltekit-superforms/client';
+	import type { SubscriptionSchema } from '$lib/schemas/subscription';
 
 	type Props = {
-		data: LayoutData;
+		form: SuperValidated<SubscriptionSchema>;
 	};
 
-	let { data }: Props = $props();
-	const { form, message, enhance } = superForm(data.form);
+	let { form }: Props = $props();
+	const { form: formData, message, enhance } = superForm(form);
 </script>
 
 <footer class="footer">
@@ -40,7 +40,7 @@
 					name="email"
 					class="custom-input__field"
 					placeholder="Email  address..."
-					bind:value={$form.email}
+					bind:value={$formData.email}
 				/>
 				<button class="custom-input__button" type="submit">
 					<ArrowRight />

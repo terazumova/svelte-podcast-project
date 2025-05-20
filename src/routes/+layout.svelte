@@ -19,7 +19,7 @@
 <main class="container">
 	{@render children()}
 </main>
-<Footer {data} />
+<Footer form={data.form} />
 
 <style>
 	.container {
