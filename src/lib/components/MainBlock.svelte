@@ -25,9 +25,9 @@
 		{/if}
 	</div>
 	<ul class="main-component__links">
-		<Spotify class="main-component__link" />
-		<Soundcloud class="main-component__link" />
-		<AppleMusic class="main-component__link" />
+		<Spotify />
+		<Soundcloud />
+		<AppleMusic />
 	</ul>
 </div>
 
@@ -72,9 +72,5 @@
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
-	}
-
-	:global(.main-component__link) {
-		cursor: pointer;
 	}
 </style>

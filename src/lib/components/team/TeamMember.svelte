@@ -13,9 +13,9 @@
 		<p class="position">{position}</p>
 		<a class="name" href="/team/{id}" target="_blank" rel="noopener noreferrer">{name}</a>
 		<ul class="links">
-			<Linkedin class="links__item" />
-			<Github class="links__item" />
-			<Twitter class="links__item" />
+			<Linkedin />
+			<Github />
+			<Twitter />
 		</ul>
 	</div>
 </div>
@@ -60,11 +60,5 @@
 		gap: 16px;
 		margin-top: auto;
 		color: var(--color-dark-grey);
-	}
-
-	:global(.links__item) {
-		width: 12px;
-		height: 12px;
-		cursor: pointer;
 	}
 </style>

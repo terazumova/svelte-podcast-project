@@ -58,9 +58,9 @@
 		</form>
 	</div>
 	<ul class="social">
-		<Facebook class="social__button" />
-		<Github class="social__button" />
-		<Twitter class="social__button" />
+		<Facebook />
+		<Github />
+		<Twitter />
 	</ul>
 </footer>
 
@@ -114,10 +114,6 @@
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
-	}
-
-	:global(.social__button) {
-		cursor: pointer;
 	}
 
 	.custom-input {
