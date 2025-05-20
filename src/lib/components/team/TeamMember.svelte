@@ -2,7 +2,7 @@
 	import Linkedin from '$lib/icons/social/Linkedin.svelte';
 	import Github from '$lib/icons/social/Github.svelte';
 	import Twitter from '$lib/icons/social/Twitter.svelte';
-	import type { TeamMemberType } from '$lib/types/types';
+	import type { TeamMemberType } from '$lib/types';
 
 	const { id, imageUrl, name, position }: TeamMemberType = $props();
 </script>

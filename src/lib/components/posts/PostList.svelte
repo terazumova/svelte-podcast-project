@@ -1,9 +1,9 @@
 <script lang="ts">
 	import PostItem from '$lib/components/posts/PostItem.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
-	import type { PostType } from '$lib/types/types';
+	import type { PostType } from '$lib/types';
 
-	export let posts: PostType[];
+	let posts: PostType[] = $props();
 </script>
 
 <section class="post-list">

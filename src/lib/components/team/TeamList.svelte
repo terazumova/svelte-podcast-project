@@ -1,9 +1,9 @@
 <script lang="ts">
 	import TeamMember from '$lib/components/team/TeamMember.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
-	import type { TeamMemberType } from '$lib/types/types';
+	import type { TeamMemberType } from '$lib/types';
 
-	export let team: TeamMemberType[];
+	let team: TeamMemberType[] = $props();
 </script>
 
 <section class="team">
