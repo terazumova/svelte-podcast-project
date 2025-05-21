@@ -9,21 +9,34 @@ datasource db {
 
 model Episode {
   id          String   @id @default(uuid())
-  topic       String
+  slug        String
+  category    String
   date        DateTime @default(now())
   title       String
+  abstract    String
   description String
+  transcript  String
+  audio       String
+  tags        String[]
+  Post        Post[]
 }
 
 model Post {
-  id       String   @id @default(uuid())
-  imageUrl String
-  title    String
-  date     DateTime @default(now())
+  id        String   @id @default(uuid())
+  slug      String
+  image     String
+  title     String
+  abstract  String
+  text      String
+  date      DateTime @default(now())
+  tags      String[]
+  episode   Episode  @relation(fields: [episodeId], references: [id])
+  episodeId String
 }
 
 model TeamMember {
   id             String  @id @default(uuid())
+  slug           String
   name           String
   position       String
   imageUrl       String

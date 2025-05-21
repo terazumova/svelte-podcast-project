@@ -2,8 +2,8 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-async function main() {
-	await prisma.episode.createMany({
+try {
+	const episodes = await prisma.episode.createMany({
 		data: [
 			{
 				topic: 'Business',
@@ -29,7 +29,7 @@ async function main() {
 		]
 	});
 
-	await prisma.post.createMany({
+	const posts = await prisma.post.createMany({
 		data: [
 			{
 				imageUrl: 'https://placedog.net/180/180?random',
@@ -44,7 +44,7 @@ async function main() {
 		]
 	});
 
-	await prisma.teamMember.createMany({
+	const teamMembers = await prisma.teamMember.createMany({
 		data: [
 			{
 				name: 'Aida Cave',
@@ -75,12 +75,12 @@ async function main() {
 			}
 		]
 	});
+	console.log('EPISODES COUNT', episodes.count);
+	console.log('POSTS COUNT', posts.count);
+	console.log('TEAM MEMBERS COUNT', teamMembers.count);
+} catch (e) {
+	console.error(e);
+	process.exit(1);
+} finally {
+	prisma.$disconnect();
 }
-
-main()
-	.catch((e) => console.error(e))
-	.finally(() => prisma.$disconnect());
-
-//main убрать, сделать все через try catch, добавить console log, в catch process.exit(?), обновить типы
-//audio - String
-// добавить slug, чтобы использовать в server.ts
