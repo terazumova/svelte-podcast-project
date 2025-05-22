@@ -3,7 +3,7 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const teamMember = await prisma.teamMember.findFirst({
-		where: { id: Number(params.slug) }
+		where: { slug: params.slug }
 	});
 
 	return { teamMember };

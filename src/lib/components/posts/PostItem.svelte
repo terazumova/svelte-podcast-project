@@ -1,16 +1,16 @@
 <script lang="ts">
-	import type { PostType } from '$lib/types/types';
+	import type { PostType } from '$lib/types';
 	import { formatDate } from '$lib/utils/date';
 
-	const { id, imageUrl, title, date }: PostType = $props();
+	const { slug, image, title, date }: PostType = $props();
 </script>
 
 <div class="post-item">
-	<img class="post-item__image" src={imageUrl} alt={title} width="180" height="180" />
+	<img class="post-item__image" src={image} alt={title} width="180" height="180" />
 	<div class="post-item__content">
-		<h3 class="title">{title}</h3>
+		<h2 class="title">{title}</h2>
 		<p class="date">{formatDate(date)}</p>
-		<a class="link" href={`blog/${id}`} target="_blank" rel="noopener noreferrer">Read more</a>
+		<a class="link" href={`blog/${slug}`} target="_blank" rel="noopener noreferrer">Read more</a>
 	</div>
 </div>
 

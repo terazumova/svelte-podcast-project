@@ -2,7 +2,11 @@
 	import Episode from '$lib/components/latest-episodes/Episode.svelte';
 	import type { EpisodeType } from '$lib/types';
 
-	let episodes: EpisodeType[] = $props();
+	type Props = {
+		episodes: EpisodeType[];
+	};
+
+	let { episodes }: Props = $props();
 </script>
 
 <section class="episodes-list">

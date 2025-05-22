@@ -4,14 +4,14 @@
 	import Twitter from '$lib/icons/social/Twitter.svelte';
 	import type { TeamMemberType } from '$lib/types';
 
-	const { id, imageUrl, name, position }: TeamMemberType = $props();
+	const { slug, image, name, position }: TeamMemberType = $props();
 </script>
 
 <div class="team-member">
-	<img class="team-member__image" src={imageUrl} alt={name} width="300" height="300" />
+	<img class="team-member__image" src={image} alt={name} width="300" height="300" />
 	<div class="team-member__content">
 		<p class="position">{position}</p>
-		<a class="name" href="/team/{id}" target="_blank" rel="noopener noreferrer">{name}</a>
+		<a class="name" href="/team/{slug}" target="_blank" rel="noopener noreferrer">{name}</a>
 		<ul class="links">
 			<Linkedin />
 			<Github />

@@ -25,9 +25,9 @@
 		{/if}
 	</div>
 	<ul class="main-component__links">
-		<Spotify />
-		<Soundcloud />
-		<AppleMusic />
+		<li><a class="main-component__link" href="/" rel="noopener noreferrer"><Spotify /></a></li>
+		<li><a class="main-component__link" href="/" rel="noopener noreferrer"><Soundcloud /></a></li>
+		<li><a class="main-component__link" href="/" rel="noopener noreferrer"><AppleMusic /></a></li>
 	</ul>
 </section>
 
@@ -72,5 +72,9 @@
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
+	}
+
+	.main-component__link {
+		color: var(--color-black);
 	}
 </style>

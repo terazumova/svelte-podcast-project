@@ -3,7 +3,11 @@
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import type { TeamMemberType } from '$lib/types';
 
-	let team: TeamMemberType[] = $props();
+	type Props = {
+		team: TeamMemberType[];
+	};
+
+	let { team }: Props = $props();
 </script>
 
 <section class="team">

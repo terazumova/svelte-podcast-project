@@ -1,18 +1,18 @@
 <script lang="ts">
 	import Play from '$lib/icons/Play.svelte';
-	import type { EpisodeType } from '$lib/types/types';
+	import type { EpisodeType } from '$lib/types';
 	import { formatDate } from '$lib/utils/date';
 
-	const { id, topic, title, date, description }: EpisodeType = $props();
+	const { slug, category, title, date, description }: EpisodeType = $props();
 </script>
 
 <div class="episode">
 	<div class="episodes__tags">
-		{topic} | {formatDate(date)}
+		{category} | {formatDate(date)}
 	</div>
-	<h3 class="episodes__title">{title}</h3>
+	<h2 class="episodes__title">{title}</h2>
 	<p class="episodes__description">{description}</p>
-	<a class="episodes__link" href={`/episodes/${id}`} target="_blank" rel="noopener noreferrer"
+	<a class="episodes__link" href={`/episodes/${slug}`} target="_blank" rel="noopener noreferrer"
 		><Play /> listen now</a
 	>
 </div>
@@ -26,20 +26,15 @@
 	}
 
 	.episodes__tags {
-		font-size: 14px;
-		font-weight: 400;
+		font-size: var(--font-size-h5);
+		font-weight: var(--font-weight-regular);
 		color: var(--color-grey);
-	}
-
-	.episodes__title {
-		font-size: 21px;
-		font-weight: 600;
 	}
 
 	.episodes__description {
 		color: var(--color-dark-grey);
-		font-size: 16px;
-		font-weight: 400;
+		font-size: var(--font-size-h4);
+		font-weight: var(--font-weight-regular);
 	}
 
 	.episodes__link {

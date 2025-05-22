@@ -3,7 +3,11 @@
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import type { PostType } from '$lib/types';
 
-	let posts: PostType[] = $props();
+	type Props = {
+		posts: PostType[];
+	};
+
+	let { posts }: Props = $props();
 </script>
 
 <section class="post-list">
