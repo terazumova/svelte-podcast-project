@@ -11,7 +11,7 @@
 </script>
 
 <section class="team">
-	<h2 class="team__title">Team</h2>
+	<h2 class="team__title heading-1">Team</h2>
 	<ul class="team-list">
 		{#each team as member (member.id)}
 			<li><TeamMember {...member} /></li>

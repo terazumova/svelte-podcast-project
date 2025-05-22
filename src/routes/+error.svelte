@@ -1,7 +1,7 @@
 <div class="not-found">
 	<p class="not-found__error">404</p>
 	<h1 class="not-found__title">Page not found!</h1>
-	<p class="not-found__description">
+	<p class="not-found__description heading-4">
 		This page not found (deleted or never exists). Try a phrase in search box or back to home and
 		start again.
 	</p>
@@ -18,15 +18,13 @@
 	}
 
 	.not-found__error {
-		font-size: 144px;
-		font-weight: 600;
+		font-size: var(--fs-large);
+		font-weight: var(--fw-semibold);
 	}
 
 	.not-found__description {
-        margin: auto;
+		margin: auto;
 		max-width: 450px;
 		color: var(--color-dark-grey);
-		font-size: 16px;
-		font-weight: 400;
 	}
 </style>

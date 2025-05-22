@@ -11,17 +11,17 @@
 		</a>
 		<nav>
 			<ul class="navigation">
-				<li class="navigation__link"><a href="/">Episodes <ArrowDown /></a></li>
-				<li class="navigation__link">
+				<li class="navigation__link heading-6"><a href="/">Episodes <ArrowDown /></a></li>
+				<li class="navigation__link heading-6">
 					<a href="/blog">Blog</a>
 				</li>
-				<li class="navigation__link">
+				<li class="navigation__link heading-6">
 					<a href="/contact">Contact</a>
 				</li>
-				<li class="navigation__link navigation__link_highlighted">
+				<li class="navigation__link heading-6 navigation__link_highlighted">
 					<a href="/donate"><Heart /> Donate</a>
 				</li>
-				<li class="navigation__link"><a href="/"><Search /></a></li>
+				<li class="navigation__link heading-6"><a href="/"><Search /></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -50,6 +50,7 @@
 		gap: 8px;
 		color: var(--color-black);
 		text-decoration: none;
+		text-transform: uppercase;
 	}
 
 	.navigation__link_highlighted a {

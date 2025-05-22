@@ -96,16 +96,16 @@
 	}
 
 	.newsletter__title {
-		font-size: 16px;
-		font-weight: 600;
+		font-size: var(--fs-h4);
+		font-weight: var(--fw-regular);
 		letter-spacing: 16%;
 		text-transform: uppercase;
 		margin-bottom: 8px;
 	}
 
 	.newsletter__description {
-		font-size: 12px;
-		font-weight: 400;
+		font-size: var(--fs-h6);
+		font-weight: var(--fw-regular);
 		margin-bottom: 14px;
 	}
 
@@ -137,8 +137,8 @@
 	}
 
 	.custom-input__field {
-		font-size: 12px;
-		font-weight: 400;
+		font-size: var(--fs-h6);
+		font-weight: var(--fw-regular);
 		padding: 14px 0 14px 14px;
 		background-color: transparent;
 		border: none;
@@ -160,8 +160,8 @@
 	}
 
 	.newsletter__message {
-		font-size: 12px;
-		font-weight: 400;
+		font-size: var(--fs-h6);
+		font-weight: var(--fw-regular);
 		padding-top: 8px;
 	}
 

@@ -10,8 +10,10 @@
 <div class="team-member">
 	<img class="team-member__image" src={image} alt={name} width="300" height="300" />
 	<div class="team-member__content">
-		<p class="position">{position}</p>
-		<a class="name" href="/team/{slug}" target="_blank" rel="noopener noreferrer">{name}</a>
+		<p class="position heading-6">{position}</p>
+		<a class="name heading-3" href="/team/{slug}" target="_blank" rel="noopener noreferrer"
+			>{name}</a
+		>
 		<ul class="links">
 			<Linkedin />
 			<Github />
@@ -46,13 +48,11 @@
 	.position {
 		text-transform: uppercase;
 		color: var(--color-purple);
-		font-size: 12px;
-		font-weight: 600;
 		margin-bottom: 8px;
 	}
 
 	.name {
-		font-size: 18px;
+		color: var(--color-black);
 	}
 
 	.links {

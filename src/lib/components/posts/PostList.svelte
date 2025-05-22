@@ -11,11 +11,11 @@
 </script>
 
 <section class="post-list">
-	<h2 class="post-list__title">Latest Posts</h2>
+	<h2 class="post-list__title heading-1">Latest Posts</h2>
 	{#each posts as post (post.id)}
 		<PostItem {...post} />
 	{/each}
-	<a class="post-list__link" href="/blog" target="_blank" rel="noopener noreferrer"
+	<a class="post-list__link heading-5" href="/blog" target="_blank" rel="noopener noreferrer"
 		>View Blog <ArrowRight /></a
 	>
 </section>

@@ -8,9 +8,11 @@
 <div class="post-item">
 	<img class="post-item__image" src={image} alt={title} width="180" height="180" />
 	<div class="post-item__content">
-		<h2 class="title">{title}</h2>
-		<p class="date">{formatDate(date)}</p>
-		<a class="link" href={`blog/${slug}`} target="_blank" rel="noopener noreferrer">Read more</a>
+		<h2 class="title heading-2">{title}</h2>
+		<p class="date heading-5">{formatDate(date)}</p>
+		<a class="link heading-5" href={`blog/${slug}`} target="_blank" rel="noopener noreferrer"
+			>Read more</a
+		>
 	</div>
 </div>
 
@@ -34,13 +36,11 @@
 	}
 
 	.title {
-		font-size: 21px;
 		margin-bottom: 16px;
 	}
 
 	.date {
 		color: var(--color-grey);
-		font-size: 14px;
 		margin-bottom: 39px;
 	}
 </style>

@@ -7,13 +7,16 @@
 </script>
 
 <div class="episode">
-	<div class="episodes__tags">
+	<div class="episodes__tags heading-5">
 		{category} | {formatDate(date)}
 	</div>
-	<h2 class="episodes__title">{title}</h2>
-	<p class="episodes__description">{description}</p>
-	<a class="episodes__link" href={`/episodes/${slug}`} target="_blank" rel="noopener noreferrer"
-		><Play /> listen now</a
+	<h2 class="episodes__title heading-2">{title}</h2>
+	<p class="episodes__description heading-4">{description}</p>
+	<a
+		class="episodes__link heading-6"
+		href={`/episodes/${slug}`}
+		target="_blank"
+		rel="noopener noreferrer"><Play /> listen now</a
 	>
 </div>
 
@@ -26,15 +29,11 @@
 	}
 
 	.episodes__tags {
-		font-size: var(--font-size-h5);
-		font-weight: var(--font-weight-regular);
 		color: var(--color-grey);
 	}
 
 	.episodes__description {
 		color: var(--color-dark-grey);
-		font-size: var(--font-size-h4);
-		font-weight: var(--font-weight-regular);
 	}
 
 	.episodes__link {

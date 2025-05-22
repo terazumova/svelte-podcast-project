@@ -15,7 +15,7 @@
 		height="180"
 	/>
 	<h1 class="sr-only">CastPress</h1>
-	<h2 class="main-component__title">How to rapidly test any experience!</h2>
+	<h2 class="main-component__title heading-1">How to rapidly test any experience!</h2>
 	<div class="main-component__player">
 		{#if podcastUrl}
 			<audio controls class="main-component__audio">
@@ -32,16 +32,6 @@
 </section>
 
 <style>
-	.sr-only {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
-	}
-
 	.main-component {
 		display: flex;
 		flex-direction: column;
