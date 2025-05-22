@@ -6,7 +6,7 @@
 	let podcastUrl: string = 'TempAudio.mp3';
 </script>
 
-<div class="main-component">
+<section class="main-component">
 	<img
 		class="main-component__image"
 		src="https://placedog.net/500?random"
@@ -29,7 +29,7 @@
 		<Soundcloud />
 		<AppleMusic />
 	</ul>
-</div>
+</section>
 
 <style>
 	.sr-only {
