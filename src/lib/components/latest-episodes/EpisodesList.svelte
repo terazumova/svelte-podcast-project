@@ -10,6 +10,7 @@
 </script>
 
 <section class="episodes-list">
+	<h2 class="sr-only">Episodes</h2>
 	{#each episodes as episode (episode.id)}
 		<Episode {...episode} />
 	{/each}

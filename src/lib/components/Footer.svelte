@@ -4,51 +4,56 @@
 	import Twitter from '$lib/icons/social/Twitter.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 
-	import { superForm, type SuperValidated } from 'sveltekit-superforms/client';
 	import type { SubscriptionSchema } from '$lib/schemas/subscription';
+	import { superForm, type SuperValidated } from 'sveltekit-superforms';
 
 	type Props = {
 		form: SuperValidated<SubscriptionSchema>;
 	};
 
 	let { form }: Props = $props();
-	const { form: formData, message, enhance } = superForm(form);
+	const { form: formData, message, errors, enhance } = superForm(form);
 </script>
 
 <footer class="footer">
-	<div class="container">
-		<ul class="navigation">
-			<li class="navigation__link">
+	<div class="footer__container">
+		<ul class="footer__nav">
+			<li class="footer__nav-link">
 				<a href="/episodes">Episodes</a>
 			</li>
-			<li class="navigation__link">
+			<li class="footer__nav-link">
 				<a href="/blog">Blog</a>
 			</li>
-			<li class="navigation__link">
+			<li class="footer__nav-link">
 				<a href="/contact">Contact</a>
 			</li>
-			<li class="navigation__link">
+			<li class="footer__nav-link">
 				<a href="/donate">Donate</a>
 			</li>
 		</ul>
-		<form class="newsletter" action="subscribe" method="post" use:enhance>
-			<p class="newsletter__title">Newsletter</p>
-			<p class="newsletter__description">Sign up now; get closer to our action.</p>
-			<div class="custom-input">
+		<form class="footer__newsletter" action="subscribe" method="post" use:enhance>
+			<p class="footer__newsletter-title">Newsletter</p>
+			<p class="footer__newsletter-description">Sign up now; get closer to our action.</p>
+			<div class="footer__input">
 				<input
 					id="email"
 					name="email"
-					class="custom-input__field"
+					class="footer__input-field"
 					placeholder="Email  address..."
 					bind:value={$formData.email}
 				/>
-				<button class="custom-input__button" type="submit">
+				<button class="footer__input-button" type="submit">
 					<ArrowRight />
 				</button>
 			</div>
+			{#if $errors}
+				<p class="footer__newsletter-message error">
+					{$errors.email}
+				</p>
+			{/if}
 			{#if $message}
 				<p
-					class="newsletter__message"
+					class="footer__newsletter-message"
 					class:success={$message.status == 'success'}
 					class:error={$message.status == 'error'}
 				>
@@ -57,10 +62,10 @@
 			{/if}
 		</form>
 	</div>
-	<ul class="social">
-		<Facebook />
-		<Github />
-		<Twitter />
+	<ul class="footer__social">
+		<li><a href="/" rel="noopener noreferrer"><Facebook /></a></li>
+		<li><a href="/" rel="noopener noreferrer"><Github /></a></li>
+		<li><a href="/" rel="noopener noreferrer"><Twitter /></a></li>
 	</ul>
 </footer>
 
@@ -71,7 +76,7 @@
 		padding: 64px 0 39px 0;
 	}
 
-	.container {
+	.footer__container {
 		display: flex;
 		align-items: start;
 		justify-content: space-between;
@@ -79,23 +84,24 @@
 		border-top: 1px solid var(--color-light-grey-1);
 	}
 
-	.navigation {
+	.footer__nav {
 		display: flex;
 		flex-direction: column;
 		align-items: start;
 		gap: 9px;
 	}
 
-	.navigation__link a {
+	.footer__nav-link a {
 		color: var(--color-black);
 		text-decoration: none;
 	}
 
-	.newsletter {
+	.footer__newsletter {
 		min-width: 375px;
+		position: relative;
 	}
 
-	.newsletter__title {
+	.footer__newsletter-title {
 		font-size: var(--fs-h4);
 		font-weight: var(--fw-regular);
 		letter-spacing: 16%;
@@ -103,20 +109,29 @@
 		margin-bottom: 8px;
 	}
 
-	.newsletter__description {
+	.footer__newsletter-description {
 		font-size: var(--fs-h6);
 		font-weight: var(--fw-regular);
 		margin-bottom: 14px;
 	}
 
-	.social {
+	.footer__newsletter-message {
+		font-size: var(--fs-h6);
+		font-weight: var(--fw-regular);
+		position: absolute;
+		left: 0;
+		bottom: -24px;
+	}
+
+	.footer__social {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
+		color: var(--color-black);
 	}
 
-	.custom-input {
+	.footer__input {
 		display: flex;
 		align-items: center;
 		width: 100%;
@@ -126,17 +141,17 @@
 		padding-right: 3px;
 	}
 
-	.custom-input:focus {
+	.footer__input:focus {
 		border: 1px solid var(--color-purple);
 		outline: none;
 	}
 
-	.custom-input:disabled {
+	.footer__input:disabled {
 		background-color: var(--color-grey);
 		cursor: not-allowed;
 	}
 
-	.custom-input__field {
+	.footer__input-field {
 		font-size: var(--fs-h6);
 		font-weight: var(--fw-regular);
 		padding: 14px 0 14px 14px;
@@ -145,11 +160,11 @@
 		width: 100%;
 	}
 
-	.custom-input__field:focus {
+	.footer__input-field:focus {
 		outline: none;
 	}
 
-	.custom-input__button {
+	.footer__input-button {
 		border: none;
 		background-color: var(--color-purple);
 		color: var(--color-white);
@@ -159,17 +174,11 @@
 		cursor: pointer;
 	}
 
-	.newsletter__message {
-		font-size: var(--fs-h6);
-		font-weight: var(--fw-regular);
-		padding-top: 8px;
+	.success {
+		color: var(--color-green);
 	}
 
 	.error {
 		color: var(--color-red);
-	}
-
-	.success {
-		color: var(--color-green);
 	}
 </style>

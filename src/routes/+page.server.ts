@@ -1,18 +1,10 @@
-import prisma from '$lib/server/prisma';
+import { getLastThreeEpisodes, getLastTwoPosts, getTeamMembers } from '$lib/services';
+import type { PageServerLoad } from './$types';
 
-export const load = async () => {
-	const episodes = await prisma.episode.findMany({
-		take: 3
-	});
-
-	const posts = await prisma.post.findMany({
-		take: 2
-	});
-
-	const team = await prisma.teamMember.findMany({
-		where: { showOnMainPage: true },
-		take: 2
-	});
+export const load: PageServerLoad = async () => {
+	const episodes = await getLastThreeEpisodes();
+	const posts = await getLastTwoPosts();
+	const team = await getTeamMembers();
 
 	return { team, posts, episodes };
 };

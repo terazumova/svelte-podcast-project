@@ -15,9 +15,9 @@
 			>{name}</a
 		>
 		<ul class="links">
-			<Linkedin />
-			<Github />
-			<Twitter />
+			<li><Linkedin /></li>
+			<li><Github /></li>
+			<li><Twitter /></li>
 		</ul>
 	</div>
 </div>
