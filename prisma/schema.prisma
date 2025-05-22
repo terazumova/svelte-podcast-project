@@ -31,7 +31,7 @@ model Post {
   text      String
   date      DateTime @default(now())
   tags      String[]
-  episode   Episode?  @relation(fields: [episodeId], references: [id])
+  episode   Episode? @relation(fields: [episodeId], references: [id])
   episodeId String?
 }
 
