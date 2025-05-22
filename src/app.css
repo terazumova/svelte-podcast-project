@@ -41,6 +41,7 @@ a {
 	text-decoration: none;
 }
 
+a:focus,
 a:hover {
 	color: var(--color-dark-purple);
 }
