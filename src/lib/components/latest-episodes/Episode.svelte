@@ -12,11 +12,8 @@
 	</div>
 	<h2 class="episodes__title heading-2">{title}</h2>
 	<p class="episodes__description heading-4">{description}</p>
-	<a
-		class="episodes__link heading-6"
-		href={`/episodes/${slug}`}
-		target="_blank"
-		rel="noopener noreferrer"><Play /> listen now</a
+	<a class="episodes__link heading-6" href={`/episodes/${slug}`} target="_blank"
+		><Play /> listen now</a
 	>
 </div>
 

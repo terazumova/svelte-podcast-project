@@ -63,9 +63,9 @@
 		</form>
 	</div>
 	<ul class="footer__social">
-		<li><a href="/" rel="noopener noreferrer"><Facebook /></a></li>
-		<li><a href="/" rel="noopener noreferrer"><Github /></a></li>
-		<li><a href="/" rel="noopener noreferrer"><Twitter /></a></li>
+		<li><a class="footer__social-link" href="/" rel="noopener noreferrer"><Facebook /></a></li>
+		<li><a class="footer__social-link" href="/" rel="noopener noreferrer"><Github /></a></li>
+		<li><a class="footer__social-link" href="/" rel="noopener noreferrer"><Twitter /></a></li>
 	</ul>
 </footer>
 
@@ -128,6 +128,9 @@
 		align-items: center;
 		justify-content: center;
 		gap: 24px;
+	}
+
+	.footer__social-link {
 		color: var(--color-black);
 	}
 

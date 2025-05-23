@@ -1,8 +1,8 @@
-import prisma from '$lib/server/prisma';
+import { getAllTeamMembers } from '$lib/services';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const teamMembers = await prisma.teamMember.findMany();
+	const teamMembers = await getAllTeamMembers();
 
 	return { teamMembers };
 };

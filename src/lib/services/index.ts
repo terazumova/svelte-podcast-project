@@ -1,4 +1,4 @@
-import prisma from "$lib/server/prisma";
+import prisma from '$lib/server/prisma';
 
 export const findEmailInSubscriptions = async (email: string) => {
 	try {
@@ -33,6 +33,19 @@ export const getLastThreeEpisodes = async () => {
 	}
 };
 
+export const getAllEpisodes = async () => {
+	try {
+		return await prisma.episode.findMany({
+			orderBy: {
+				date: 'desc'
+			}
+		});
+	} catch (error) {
+		console.error('Error getting all episodes:', error);
+		return [];
+	}
+};
+
 export const getLastTwoPosts = async () => {
 	try {
 		return await prisma.post.findMany({
@@ -40,6 +53,19 @@ export const getLastTwoPosts = async () => {
 		});
 	} catch (error) {
 		console.error('Error getting last two posts:', error);
+		return [];
+	}
+};
+
+export const getAllPosts = async () => {
+	try {
+		return await prisma.post.findMany({
+			orderBy: {
+				date: 'desc'
+			}
+		});
+	} catch (error) {
+		console.error('Error getting all posts:', error);
 		return [];
 	}
 };
@@ -52,6 +78,15 @@ export const getTeamMembers = async () => {
 		});
 	} catch (error) {
 		console.error('Error getting team members:', error);
+		return [];
+	}
+};
+
+export const getAllTeamMembers = async () => {
+	try {
+		return await prisma.teamMember.findMany();
+	} catch (error) {
+		console.error('Error getting all posts:', error);
 		return [];
 	}
 };

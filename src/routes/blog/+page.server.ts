@@ -1,13 +1,8 @@
-import prisma from '$lib/server/prisma';
+import { getAllPosts } from '$lib/services';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const posts = await prisma.post.findMany({
-		orderBy: {
-			date: 'desc'
-		},
-		take: 3
-	});
+	const posts = await getAllPosts();
 
 	return { posts };
 };

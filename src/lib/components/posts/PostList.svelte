@@ -15,9 +15,7 @@
 	{#each posts as post (post.id)}
 		<PostItem {...post} />
 	{/each}
-	<a class="post-list__link heading-5" href="/blog" target="_blank" rel="noopener noreferrer"
-		>View Blog <ArrowRight /></a
-	>
+	<a class="post-list__link heading-5" href="/blog" target="_blank">View Blog <ArrowRight /></a>
 </section>
 
 <style>
