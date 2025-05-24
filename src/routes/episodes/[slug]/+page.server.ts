@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	});
 
 	if (!episode) {
-		throw error(404, 'Post not found');
+		throw error(404, 'Episode not found');
 	}
 
 	return { episode };

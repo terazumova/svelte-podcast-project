@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { PostType } from '$lib/types';
 	import { formatDate } from '$lib/utils/date';
+	import type { PostType } from '$lib/types';
 
 	const { slug, image, title, date }: PostType = $props();
 </script>

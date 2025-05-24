@@ -70,10 +70,9 @@
 		display: flex;
 		gap: 16px;
 		margin-top: auto;
-		color: var(--color-dark-grey);
 	}
 
 	.team-member__link {
-		color: var(--color-black);
+		color: var(--color-dark-grey);
 	}
 </style>

@@ -17,13 +17,11 @@ export const actions: Actions = {
 		}
 
 		const subscription = await findEmailInSubscriptions(form.data.email);
-
 		if (subscription) {
 			return message(form, { status: 'error', text: 'This email is already subscribed.' });
 		}
 
 		const newSubscription = await subscribeUserByEmail(form.data.email);
-
 		if (newSubscription) {
 			return message(form, { status: 'success', text: 'You have been subscribed!' });
 		}

@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	});
 
 	if (!teamMember) {
-		throw error(404, 'Post not found');
+		throw error(404, 'Team member not found');
 	}
 
 	return { teamMember };

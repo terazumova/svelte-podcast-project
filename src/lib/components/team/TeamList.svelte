@@ -22,8 +22,7 @@
 
 <style>
 	.team {
-		display: flex;
-		flex-direction: column;
+		display: grid;
 		gap: 39px;
 	}
 

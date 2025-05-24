@@ -4,8 +4,9 @@
 	import Twitter from '$lib/icons/social/Twitter.svelte';
 	import ArrowRight from '$lib/icons/ArrowRight.svelte';
 	import Input from '$lib/components/common/Input.svelte';
-
 	import { subscriptionSchema, type SubscriptionSchema } from '$lib/schemas/subscription';
+	import NavList from '$lib/components/common/NavList.svelte';
+
 	import { superForm, type SuperValidated } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
@@ -27,20 +28,7 @@
 
 <footer class="footer">
 	<div class="footer__container">
-		<ul class="footer__nav">
-			<li class="footer__nav-link">
-				<a href="/episodes">Episodes</a>
-			</li>
-			<li class="footer__nav-link">
-				<a href="/blog">Blog</a>
-			</li>
-			<li class="footer__nav-link">
-				<a href="/contact">Contact</a>
-			</li>
-			<li class="footer__nav-link">
-				<a href="/donate">Donate</a>
-			</li>
-		</ul>
+		<NavList isHeader={false} />
 		<form class="footer__newsletter" action="subscribe" method="post" use:enhance>
 			<p class="footer__newsletter-title">Newsletter</p>
 			<p class="footer__newsletter-description">Sign up now; get closer to our action.</p>
@@ -73,18 +61,6 @@
 		justify-content: space-between;
 		padding: 64px 0 89px;
 		border-top: 1px solid var(--color-light-grey-1);
-	}
-
-	.footer__nav {
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		gap: 9px;
-	}
-
-	.footer__nav-link a {
-		color: var(--color-black);
-		text-decoration: none;
 	}
 
 	.footer__newsletter {

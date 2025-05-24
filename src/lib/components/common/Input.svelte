@@ -34,7 +34,7 @@
 		border: none;
 		background-color: var(--color-light-grey-2);
 		padding-right: 3px;
-        position: relative;
+		position: relative;
 	}
 
 	.input-block:focus {
