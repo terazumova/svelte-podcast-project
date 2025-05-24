@@ -1,10 +1,24 @@
+<script lang="ts">
+	import { page } from '$app/state';
+</script>
+
 <div class="not-found">
-	<p class="not-found__error">404</p>
-	<h1 class="not-found__title">Page not found!</h1>
-	<p class="not-found__description heading-4">
-		This page not found (deleted or never exists). Try a phrase in search box or back to home and
-		start again.
-	</p>
+	{#if page.status === 404}
+		<p class="not-found__error">404</p>
+		<h1 class="not-found__title">Page not found!</h1>
+		<p class="not-found__description heading-4">
+			This page not found (deleted or never exists). Try a phrase in search box or back to home and
+			start again.
+		</p>
+	{:else if page.status === 500}
+		<p class="not-found__error">Internal Server Error</p>
+		<h1 class="not-found__title">Something went wrong on our end.</h1>
+	{:else}
+		<p class="not-found__error">{page.status}</p>
+		{#if page.error?.message}
+			<h1 class="not-found__title">{page.error.message}</h1>
+		{/if}
+	{/if}
 	<a href="/">HOMEPAGE</a>
 </div>
 

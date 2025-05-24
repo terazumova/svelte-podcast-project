@@ -16,13 +16,13 @@
 	--color-red: #ff3636;
 	--color-green: #4bb543;
 
+	--fs-large: 144px;
 	--fs-h1: 26px;
 	--fs-h2: 21px;
 	--fs-h3: 18px;
 	--fs-h4: 16px;
 	--fs-h5: 14px;
 	--fs-h6: 12px;
-	--fs-large: 144px;
 
 	--fw-semibold: 600;
 	--fw-regular: 400;
@@ -42,6 +42,7 @@ a {
 }
 
 a:focus,
+a:active,
 a:hover {
 	color: var(--color-dark-purple);
 }
