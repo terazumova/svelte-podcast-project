@@ -14,7 +14,6 @@
 		width="180"
 		height="180"
 	/>
-	<h1 class="sr-only">CastPress</h1>
 	<h2 class="main-component__title heading-1">How to rapidly test any experience!</h2>
 	<div class="main-component__player">
 		{#if podcastUrl}

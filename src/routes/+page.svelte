@@ -12,6 +12,7 @@
 	let { data }: Props = $props();
 </script>
 
+<h1 class="sr-only">CastPress</h1>
 <MainBlock />
 <EpisodesList episodes={data.episodes} />
 <PostList posts={data.posts} />

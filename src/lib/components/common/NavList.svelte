@@ -43,7 +43,7 @@
 		text-transform: none;
 	}
 
-	.nav-list__link {
+	:global(.nav-list__link) {
 		display: flex;
 		align-items: center;
 		gap: 8px;

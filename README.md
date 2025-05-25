@@ -1,8 +1,8 @@
 # CastPress Podcast Platform – SvelteKit Pet Project
 
-A full-stack podcast management platform built with **Svelte 5 (SvelteKit)**, **Bun**, **PostgreSQL**, and **Prisma ORM**. This is a personal project focused on creating and managing podcasts and posts related to them.
+A full-stack podcast management platform built with **Svelte 5 (SvelteKit)**, **Bun**, **PostgreSQL**, and **Prisma ORM**. This is a pet project aimed at displaying and playing podcasts and displaying posts related to them.
 
-It's also can be used with any other runtime - npm, yarn, pnpm
+It's also can be used with any other runtime - npm, yarn, pnpm.
 
 ## Getting Started
 
