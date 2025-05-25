@@ -12,4 +12,3 @@
 <section class="team">
 	<TeamList team={data.teamMembers} />
 </section>
-
