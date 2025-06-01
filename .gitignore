@@ -1,5 +1,10 @@
 node_modules
 
+prisma/
+!prisma/schema.prisma
+!prisma/seed.ts
+!prisma/mock-data.ts
+
 # Output
 .output
 .vercel

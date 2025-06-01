@@ -1,0 +1,137 @@
+@import '@fontsource/source-serif-pro/400.css';
+@import '@fontsource/source-serif-pro/600.css';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--color-black: #222;
+	--color-white: #fff;
+	--color-purple: #7247ca;
+	--color-dark-purple: #58379b;
+	--color-light-grey-1: #eaeaee;
+	--color-light-grey-2: #f5f5f7;
+	--color-grey: #979797;
+	--color-dark-grey: #555;
+	--color-red: #ff3636;
+	--color-green: #4bb543;
+
+	--fs-large: 144px;
+	--fs-h1: 26px;
+	--fs-h2: 21px;
+	--fs-h3: 18px;
+	--fs-h4: 16px;
+	--fs-h5: 14px;
+	--fs-h6: 12px;
+
+	--fw-semibold: 600;
+	--fw-regular: 400;
+
+	--lh-loose: 32px;
+	--lh-normal: 25px;
+}
+
+body {
+	font-family: 'Source Serif Pro', serif;
+	min-width: 320px;
+}
+
+a {
+	color: var(--color-purple);
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+a:active {
+	color: var(--color-dark-purple);
+}
+
+@media (hover: hover) {
+	a:hover {
+		color: var(--color-dark-purple);
+	}
+}
+
+@media (hover: none) {
+	a:hover {
+		color: var(--color-dark-purple);
+	}
+}
+
+ul {
+	list-style: none;
+}
+
+.heading-1 {
+	font: var(--fw-semibold) var(--fs-h1) / var(--lh-loose) 'Source Serif Pro';
+}
+
+.heading-2 {
+	font: var(--fw-semibold) var(--fs-h2) / var(--lh-normal) 'Source Serif Pro';
+}
+
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-normal);
+}
+
+.heading-3 {
+	font-size: var(--fs-h3);
+}
+
+.heading-4 {
+	font-size: var(--fs-h4);
+}
+
+.heading-5 {
+	font-size: var(--fs-h5);
+}
+
+.heading-6 {
+	font-size: var(--fs-h6);
+}
+
+.heading-5--bold,
+.heading-6--bold {
+	font-weight: var(--fw-semibold);
+	line-height: var(--lh-normal);
+}
+
+.heading-5--bold {
+	font-size: var(--fs-h5);
+}
+
+.heading-6--bold {
+	font-size: var(--fs-h6);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	color: var(--color-black);
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.success {
+	color: var(--color-green);
+}
+
+.error {
+	color: var(--color-red);
+}

@@ -1,38 +1,72 @@
-# sv
+# CastPress Podcast Platform – SvelteKit Pet Project
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A full-stack podcast management platform built with **Svelte 5 (SvelteKit)**, **Bun**, **PostgreSQL**, and **Prisma ORM**. This is a pet project aimed at displaying and playing podcasts and displaying posts related to them.
 
-## Creating a project
+It's also can be used with any other runtime - npm, yarn, pnpm.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting Started
 
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### 1. Install dependencies:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
 ```
 
-## Building
-
-To create a production version of your app:
+### 2. Ensure Docker is running, then start the PostgreSQL container:
 
 ```bash
-npm run build
+docker-compose up -d
 ```
 
-You can preview the production build with `npm run preview`.
+This will start a PostgreSQL instance defined in docker-compose.yml.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### 3. Create a .env file in the root of the project:
+
+```bash
+DATABASE_URL="postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@localhost:5432/{POSTGRES_DB}"
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+```
+
+### 4: Generate Prisma Client
+
+```bash
+bun prisma generate
+```
+
+### 5. Set up the database:
+
+```bash
+bun prisma migrate dev --name init
+bun run seed
+```
+
+### 6. Run the development server:
+
+```bash
+bun run dev
+```
+
+### 7. Build the project:
+
+```bash
+bun run build
+```
+
+### 8. Preview the project:
+
+```bash
+bun run preview
+```
+
+### 9. To explore your database with Prisma’s built-in tooling: you can use:
+
+```bash
+#Make sure your client is generated
+bun prisma generate
+```
+
+```bash
+bun prisma studio
+```
