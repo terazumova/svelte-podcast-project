@@ -4,11 +4,11 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import type { Snippet } from 'svelte';
-	import type { PageData } from './$types';
+	import type { LayoutData } from './$types';
 
 	type Props = {
 		children: Snippet;
-		data: PageData;
+		data: LayoutData;
 	};
 
 	let { children, data }: Props = $props();

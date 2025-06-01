@@ -9,6 +9,4 @@
 	let { data }: Props = $props();
 </script>
 
-{#if data.post}
-	<PostItem {...data.post} />
-{/if}
+<PostItem {...data.post} />
