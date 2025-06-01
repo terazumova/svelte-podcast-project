@@ -1,32 +1,61 @@
 <script lang="ts">
-	import Spotify from '$lib/icons/music/Spotify.svelte';
-	import Soundcloud from '$lib/icons/music/Soundcloud.svelte';
-	import AppleMusic from '$lib/icons/music/AppleMusic.svelte';
+	import Spotify from '$lib/icons/Spotify.svelte';
+	import Soundcloud from '$lib/icons/Soundcloud.svelte';
+	import AppleMusic from '$lib/icons/AppleMusic.svelte';
+	import type { EpisodeType } from '$lib/types';
 
-	let podcastUrl: string = 'TempAudio.mp3';
+	type Props = {
+		episode: EpisodeType;
+	};
+
+	let { episode }: Props = $props();
 </script>
 
 <section class="main-component">
 	<img
 		class="main-component__image"
-		src="https://placedog.net/500?random"
-		alt="How to rapidly test any experience!"
+		src={episode.image}
+		alt={episode.title}
 		width="180"
 		height="180"
 	/>
-	<h2 class="main-component__title heading-1">How to rapidly test any experience!</h2>
+	<h2 class="main-component__title heading-1">{episode.title}</h2>
 	<div class="main-component__player">
-		{#if podcastUrl}
+		{#if episode.audio}
 			<audio controls class="main-component__audio">
-				<source src={podcastUrl} type="audio/mp3" />
+				<source src={episode.audio} type="audio/mp3" />
 				Your browser does not support the audio element.
 			</audio>
 		{/if}
 	</div>
 	<ul class="main-component__links">
-		<li><a class="main-component__link" href="/" rel="noopener noreferrer"><Spotify /></a></li>
-		<li><a class="main-component__link" href="/" rel="noopener noreferrer"><Soundcloud /></a></li>
-		<li><a class="main-component__link" href="/" rel="noopener noreferrer"><AppleMusic /></a></li>
+		<li>
+			<a
+				class="main-component__link"
+				href="/"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="go to spotify"><Spotify /></a
+			>
+		</li>
+		<li>
+			<a
+				class="main-component__link"
+				href="/"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="go to soundcloud"><Soundcloud /></a
+			>
+		</li>
+		<li>
+			<a
+				class="main-component__link"
+				href="/"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="go to apple music"><AppleMusic /></a
+			>
+		</li>
 	</ul>
 </section>
 
@@ -42,7 +71,7 @@
 
 	.main-component__image {
 		width: 100%;
-		max-width: 300px;
+		max-width: 180px;
 		border-radius: 8px;
 		object-fit: cover;
 	}

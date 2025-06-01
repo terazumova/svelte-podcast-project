@@ -9,6 +9,4 @@
 	let { data }: Props = $props();
 </script>
 
-<section class="team">
-	<TeamList team={data.teamMembers} />
-</section>
+<TeamList team={data.teamMembers} />

@@ -1,3 +1,6 @@
+@import '@fontsource/source-serif-pro/400.css';
+@import '@fontsource/source-serif-pro/600.css';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -39,12 +42,24 @@ body {
 a {
 	color: var(--color-purple);
 	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
-a:focus,
-a:active,
-a:hover {
+a:focus-visible,
+a:active {
 	color: var(--color-dark-purple);
+}
+
+@media (hover: hover) {
+	a:hover {
+		color: var(--color-dark-purple);
+	}
+}
+
+@media (hover: none) {
+	a:hover {
+		color: var(--color-dark-purple);
+	}
 }
 
 ul {
@@ -52,15 +67,11 @@ ul {
 }
 
 .heading-1 {
-	font-size: var(--fs-h1);
-	font-weight: var(--fw-semibold);
-	line-height: var(--lh-loose);
+	font: var(--fw-semibold) var(--fs-h1) / var(--lh-loose) 'Source Serif Pro';
 }
 
 .heading-2 {
-	font-size: var(--fs-h2);
-	font-weight: var(--fw-semibold);
-	line-height: var(--lh-normal);
+	font: var(--fw-semibold) var(--fs-h2) / var(--lh-normal) 'Source Serif Pro';
 }
 
 .heading-3,
@@ -107,7 +118,7 @@ ul {
 	color: var(--color-black);
 }
 
-.sr-only {
+.visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
@@ -115,4 +126,12 @@ ul {
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
+}
+
+.success {
+	color: var(--color-green);
+}
+
+.error {
+	color: var(--color-red);
 }

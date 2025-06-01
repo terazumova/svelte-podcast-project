@@ -9,15 +9,17 @@
 	let { episodes }: Props = $props();
 </script>
 
-<section class="episodes-list">
-	<h2 class="sr-only">Episodes</h2>
-	{#each episodes as episode (episode.id)}
-		<Episode {...episode} />
-	{/each}
+<section class="episodes">
+	<h2 class="visually-hidden">Episodes</h2>
+	<ul class="episodes__list">
+		{#each episodes as episode (episode.id)}
+			<li><Episode {...episode} /></li>
+		{/each}
+	</ul>
 </section>
 
 <style>
-	.episodes-list {
+	.episodes__list {
 		display: grid;
 		gap: 51px;
 	}

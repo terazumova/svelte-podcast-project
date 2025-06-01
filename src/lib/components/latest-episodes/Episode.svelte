@@ -3,18 +3,16 @@
 	import { formatDate } from '$lib/utils/date';
 	import type { EpisodeType } from '$lib/types';
 
-	const { slug, category, title, date, description }: EpisodeType = $props();
+	let { slug, category, title, date, description, episodeNumber }: EpisodeType = $props();
 </script>
 
 <div class="episode">
 	<div class="episode__tags heading-5">
 		{category} | {formatDate(date)}
 	</div>
-	<h2 class="episode__title heading-2">{title}</h2>
+	<h3 class="episode__title heading-2">{episodeNumber} - {title}</h3>
 	<p class="episode__description heading-4">{description}</p>
-	<a class="episode__link heading-6" href={`/episodes/${slug}`} target="_blank"
-		><Play /> listen now</a
-	>
+	<a class="episode__link heading-6" href={`/episodes/${slug}`}><Play /> listen now</a>
 </div>
 
 <style>

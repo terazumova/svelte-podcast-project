@@ -17,7 +17,7 @@
 			<li><TeamMember {...member} /></li>
 		{/each}
 	</ul>
-	<a class="team__link" href="/team" target="_blank">Read all <ArrowRight /></a>
+	<a class="team__link" href="/team">Read all <ArrowRight /></a>
 </section>
 
 <style>

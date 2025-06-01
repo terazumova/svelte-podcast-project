@@ -9,11 +9,12 @@ datasource db {
 
 model Episode {
   id            String   @id @default(uuid())
-  slug          String
+  slug          String   @unique
   episodeNumber Int
   category      String
   date          DateTime @default(now())
-  title         String
+  title         String   @unique
+  image         String
   abstract      String
   description   String
   transcript    String
@@ -24,9 +25,9 @@ model Episode {
 
 model Post {
   id        String   @id @default(uuid())
-  slug      String
+  slug      String   @unique
   image     String
-  title     String
+  title     String   @unique
   abstract  String
   text      String
   date      DateTime @default(now())
@@ -37,7 +38,7 @@ model Post {
 
 model TeamMember {
   id             String  @id @default(uuid())
-  slug           String
+  slug           String  @unique
   name           String
   position       String
   image          String

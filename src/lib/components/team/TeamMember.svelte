@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Linkedin from '$lib/icons/social/Linkedin.svelte';
-	import Github from '$lib/icons/social/Github.svelte';
-	import Twitter from '$lib/icons/social/Twitter.svelte';
+	import Linkedin from '$lib/icons/Linkedin.svelte';
+	import Github from '$lib/icons/Github.svelte';
+	import Twitter from '$lib/icons/Twitter.svelte';
 	import type { TeamMemberType } from '$lib/types';
 
-	const { slug, image, name, position, linkedinLink, githubLink, twitterLink }: TeamMemberType =
+	let { slug, image, name, position, linkedinLink, githubLink, twitterLink }: TeamMemberType =
 		$props();
 </script>
 
@@ -12,21 +12,33 @@
 	<img class="team-member__image" src={image} alt={name} width="300" height="300" />
 	<div class="team-member__content">
 		<p class="team-member__position heading-6">{position}</p>
-		<a class="team-member__name heading-3" href="/team/{slug}" target="_blank">{name}</a>
+		<a href="/team/{slug}"><h3 class="team-member__name heading-3">{name}</h3></a>
 		<ul class="team-member__links">
 			<li>
-				<a class="team-member__link" href={linkedinLink} target="_blank" rel="noopener noreferrer"
-					><Linkedin /></a
+				<a
+					class="team-member__link"
+					href={linkedinLink}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="go to linkedin profile"><Linkedin /></a
 				>
 			</li>
 			<li>
-				<a class="team-member__link" href={githubLink} target="_blank" rel="noopener noreferrer"
-					><Github /></a
+				<a
+					class="team-member__link"
+					href={githubLink}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="go to github profile"><Github /></a
 				>
 			</li>
 			<li>
-				<a class="team-member__link" href={twitterLink} target="_blank" rel="noopener noreferrer"
-					><Twitter /></a
+				<a
+					class="team-member__link"
+					href={twitterLink}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="go to twitter profile"><Twitter /></a
 				>
 			</li>
 		</ul>

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '@fontsource/source-serif-pro/400.css';
-	import '@fontsource/source-serif-pro/600.css';
 	import '../app.css';
 
 	import Header from '$lib/components/Header.svelte';

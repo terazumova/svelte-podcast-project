@@ -2,7 +2,7 @@
 	import { formatDate } from '$lib/utils/date';
 	import type { PostType } from '$lib/types';
 
-	const { slug, image, title, date }: PostType = $props();
+	let { slug, image, title, date }: PostType = $props();
 </script>
 
 <div class="post-item">
@@ -10,7 +10,7 @@
 	<div class="post-item__content">
 		<h2 class="post-item__title heading-2">{title}</h2>
 		<p class="post-item__date heading-5">{formatDate(date)}</p>
-		<a class="post-item__link heading-5" href={`blog/${slug}`} target="_blank">Read more</a>
+		<a class="post-item__link heading-5" href={`blog/${slug}`}>Read more</a>
 	</div>
 </div>
 

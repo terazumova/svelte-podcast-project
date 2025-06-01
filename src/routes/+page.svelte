@@ -12,8 +12,10 @@
 	let { data }: Props = $props();
 </script>
 
-<h1 class="sr-only">CastPress</h1>
-<MainBlock />
+<h1 class="visually-hidden">CastPress</h1>
+{#if data.episodes?.[0]}
+	<MainBlock episode={data.episodes[0]} />
+{/if}
 <EpisodesList episodes={data.episodes} />
 <PostList posts={data.posts} />
 <TeamList team={data.team} />

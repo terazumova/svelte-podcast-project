@@ -1,33 +1,25 @@
 <script lang="ts">
 	import ArrowDown from '$lib/icons/ArrowDown.svelte';
 	import Heart from '$lib/icons/Heart.svelte';
-	import Search from '$lib/icons/Search.svelte';
-
-	const { isHeader } = $props();
 </script>
 
-<nav>
-	<ul class="nav-list" class:nav-list_vertical={!isHeader}>
-		<li><a class="nav-list__link heading-6" href="/episodes">Episodes <ArrowDown /></a></li>
+<nav class="nav">
+	<ul class="nav__list">
+		<li><a class="nav__link heading-6" href="/episodes">Episodes <ArrowDown /></a></li>
 		<li>
-			<a class="nav-list__link heading-6" href="/blog">Blog</a>
+			<a class="nav__link heading-6" href="/blog">Blog</a>
 		</li>
 		<li>
-			<a class="nav-list__link heading-6" href="/contact">Contact</a>
+			<a class="nav__link heading-6" href="/contact">Contact</a>
 		</li>
 		<li>
-			<a class="nav-list__link heading-6" class:nav-list__link_highlighted={isHeader} href="/donate"
-				>{#if isHeader}<Heart />{/if} Donate</a
-			>
+			<a class="nav__link nav__donate-link heading-6" href="/donate"><Heart /> Donate</a>
 		</li>
-		{#if isHeader}
-			<li><a class="nav-list__link heading-6" href="/"><Search /></a></li>
-		{/if}
 	</ul>
 </nav>
 
 <style>
-	.nav-list {
+	.nav__list {
 		display: flex;
 		align-items: center;
 		list-style-type: none;
@@ -36,22 +28,11 @@
 		text-transform: uppercase;
 	}
 
-	.nav-list_vertical {
-		flex-direction: column;
-		align-items: start;
-		gap: 9px;
-		text-transform: none;
-	}
-
-	:global(.nav-list__link) {
+	:global(.nav__link) {
 		display: flex;
 		align-items: center;
 		gap: 8px;
 		color: var(--color-black);
 		text-decoration: none;
-	}
-
-	.nav-list__link_highlighted {
-		color: var(--color-purple);
 	}
 </style>

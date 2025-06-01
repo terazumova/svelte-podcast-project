@@ -1,26 +1,34 @@
 <script lang="ts">
-	const { formData, errors, message, submitButton, id, name, placeholder } = $props();
+	import type { Snippet } from 'svelte';
+
+	type Props = {
+		id: string;
+		name: string;
+		value: string;
+		placeholder?: string;
+		errors?: string[];
+		button: Snippet;
+	};
+
+	let { id, name, value, placeholder, errors, button }: Props = $props();
 </script>
 
 <div class="input-block">
-	<input class="input-block__input" {id} {name} {placeholder} bind:value={$formData.email} />
-	{#if submitButton}
-		{@render submitButton()}
+	<input
+		class="input-block__input"
+		{id}
+		{name}
+		{placeholder}
+		bind:value
+		oninput={() => (errors = [])}
+	/>
+	{#if button}
+		{@render button()}
 	{/if}
 
-	{#if $errors && $errors.email?.length}
+	{#if errors?.[0]}
 		<p class="input-block__message error">
-			{$errors.email[0]}
-		</p>
-	{/if}
-
-	{#if $message}
-		<p
-			class="input-block__message"
-			class:success={$message.status == 'success'}
-			class:error={$message.status == 'error'}
-		>
-			{$message.text}
+			{errors[0]}
 		</p>
 	{/if}
 </div>
@@ -66,13 +74,5 @@
 		position: absolute;
 		left: 0;
 		bottom: -24px;
-	}
-
-	.success {
-		color: var(--color-green);
-	}
-
-	.error {
-		color: var(--color-red);
 	}
 </style>

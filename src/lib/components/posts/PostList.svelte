@@ -10,22 +10,29 @@
 	let { posts }: Props = $props();
 </script>
 
-<section class="post-list">
-	<h2 class="post-list__title heading-1">Latest Posts</h2>
-	{#each posts as post (post.id)}
-		<PostItem {...post} />
-	{/each}
-	<a class="post-list__link heading-5" href="/blog" target="_blank">View Blog <ArrowRight /></a>
+<section class="posts">
+	<h2 class="posts__title heading-1">Latest Posts</h2>
+	<ul class="post__list">
+		{#each posts as post (post.id)}
+			<li><PostItem {...post} /></li>
+		{/each}
+	</ul>
+	<a class="posts__link heading-5" href="/blog">View Blog <ArrowRight /></a>
 </section>
 
 <style>
-	.post-list {
+	.posts {
 		display: flex;
 		flex-direction: column;
 		gap: 25px;
 	}
 
-	.post-list__link {
+	.post__list {
+		display: grid;
+		gap: 24px;
+	}
+
+	.posts__link {
 		width: fit-content;
 		background-color: var(--color-light-grey-2);
 		border-radius: 3px;

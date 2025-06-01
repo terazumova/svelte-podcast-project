@@ -11,8 +11,8 @@
 			start again.
 		</p>
 	{:else if page.status === 500}
-		<p class="not-found__error">Internal Server Error</p>
-		<h1 class="not-found__title">Something went wrong on our end.</h1>
+		<p class="not-found__error">500</p>
+		<h1 class="not-found__title">Internal Server Error. Something went wrong on our end.</h1>
 	{:else}
 		<p class="not-found__error">{page.status}</p>
 		{#if page.error?.message}
