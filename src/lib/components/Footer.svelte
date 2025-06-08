@@ -86,21 +86,25 @@
 
 <style>
 	.footer {
-		max-width: 670px;
+		width: 100%;
 		margin: auto;
-		padding: 64px 0 39px 0;
+		padding: 24px 16px;
 	}
 
 	.footer__container {
 		display: flex;
+		flex-direction: column;
 		align-items: start;
 		justify-content: space-between;
-		padding: 64px 0 89px;
+		padding: 24px 0 64px;
 		border-top: 1px solid var(--color-light-grey-1);
 	}
 
 	.footer__newsletter {
-		min-width: 375px;
+		width: 100%;
+		max-width: 500px;
+		padding-top: 32px;
+		margin: auto;
 		position: relative;
 	}
 
@@ -156,5 +160,22 @@
 		position: absolute;
 		left: 0;
 		bottom: -24px;
+	}
+
+	@media (min-width: 1024px) {
+		.footer {
+			max-width: 670px;
+			padding: 0 0 39px 0;
+		}
+
+		.footer__container {
+			flex-direction: row;
+			padding: 64px 0 89px;
+		}
+
+		.footer__newsletter {
+			width: 375px;
+			padding-top: 0;
+		}
 	}
 </style>

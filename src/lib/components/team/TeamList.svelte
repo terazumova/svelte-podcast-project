@@ -14,7 +14,7 @@
 	<h2 class="team__title heading-1">Team</h2>
 	<ul class="team__list">
 		{#each team as member (member.id)}
-			<li><TeamMember {...member} /></li>
+			<li class="team__member"><TeamMember {...member} /></li>
 		{/each}
 	</ul>
 	<a class="team__link" href="/team">Read all <ArrowRight /></a>
@@ -38,5 +38,9 @@
 		border-radius: 3px;
 		padding: 8px 16px;
 		cursor: pointer;
+	}
+
+	.team__member {
+		margin: auto;
 	}
 </style>

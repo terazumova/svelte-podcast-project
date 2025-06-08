@@ -22,11 +22,17 @@
 
 <style>
 	.container {
-		max-width: 670px;
-		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		gap: 70px;
-		padding-top: 64px;
+		gap: 64px;
+		padding: 24px 16px;
+	}
+
+	@media (min-width: 1024px) {
+		.container {
+			max-width: 670px;
+			gap: 70px;
+			padding: 64px 0;
+		}
 	}
 </style>
