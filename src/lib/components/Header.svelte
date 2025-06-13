@@ -6,7 +6,22 @@
 	import Close from '$lib/icons/Close.svelte';
 
 	let isSidebarVisible = $state(false);
+	let body = $state<HTMLBodyElement | null>();
+
+	const handleOpenSidebar = () => {
+		isSidebarVisible = true;
+
+		body?.classList.add('no-scroll');
+	};
+
+	const handleCloseSidebar = () => {
+		isSidebarVisible = false;
+
+		body?.classList.remove('no-scroll');
+	};
 </script>
+
+<svelte:body bind:this={body} />
 
 <header class="header container">
 	<a href="/">
@@ -16,7 +31,9 @@
 		<NavList />
 		<Search />
 	</div>
-	<button class="header__menu-button" onclick={() => (isSidebarVisible = !isSidebarVisible)}
+	<button
+		class="header__menu-button"
+		onclick={() => (isSidebarVisible ? handleCloseSidebar() : handleOpenSidebar())}
 		>{#if isSidebarVisible}
 			<Close />
 		{:else}

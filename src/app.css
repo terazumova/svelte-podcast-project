@@ -135,3 +135,7 @@ ul {
 .error {
 	color: var(--color-red);
 }
+
+.no-scroll {
+	overflow: hidden;
+}

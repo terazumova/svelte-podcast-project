@@ -3,7 +3,6 @@
 	import NavList from './common/NavList.svelte';
 </script>
 
-<svelte:window on:wheel|nonpassive={(e) => e.preventDefault()} />
 <aside class="sidebar-panel" transition:fly={{ y: -300, duration: 300 }}>
 	<NavList />
 </aside>
