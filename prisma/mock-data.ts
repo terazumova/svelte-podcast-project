@@ -57,6 +57,411 @@ export const episodesData = [
 		transcript: 'Transcript content here...',
 		audio: '/audio/TempAudio.mp3',
 		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-24',
+		episodeNumber: 24,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 2',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-25',
+		episodeNumber: 25,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 3',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-26',
+		episodeNumber: 26,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 4',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-27',
+		episodeNumber: 27,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 5',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-28',
+		episodeNumber: 28,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 6',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-29',
+		episodeNumber: 29,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 7',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-30',
+		episodeNumber: 30,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 8',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-31',
+		episodeNumber: 31,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 9',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-32',
+		episodeNumber: 32,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 10',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-33',
+		episodeNumber: 33,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 11',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-34',
+		episodeNumber: 34,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 12',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-35',
+		episodeNumber: 35,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 13',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-36',
+		episodeNumber: 36,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 14',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-37',
+		episodeNumber: 37,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 15',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-38',
+		episodeNumber: 38,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 16',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-39',
+		episodeNumber: 39,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 17',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-40',
+		episodeNumber: 40,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 18',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-41',
+		episodeNumber: 41,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 19',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-42',
+		episodeNumber: 42,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 20',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-43',
+		episodeNumber: 43,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 21',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-44',
+		episodeNumber: 44,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 22',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-45',
+		episodeNumber: 45,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 23',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-46',
+		episodeNumber: 46,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 24',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-47',
+		episodeNumber: 47,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 25',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-48',
+		episodeNumber: 48,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 26',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-49',
+		episodeNumber: 49,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 27',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
+	},
+	{
+		slug: 'episode-50',
+		episodeNumber: 50,
+		category: 'Business',
+		date: new Date('2023-01-01T12:00:00Z'),
+		title: 'Everything you need to know about mind mapping creation - 28',
+		image: '/images/EpisodeImage.webp',
+		abstract:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mollis augue. Cras suscipit sit amet est in aliquam. In vel blandit nunc. Donec at dolor in orci tristique bibendum.Cras non interdum ligula, sit amet imperdiet purus. Vestibulum quis leo nibh.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect adipiscing elit. Sed at arcu dui. Aenean placerat mauris nisl...',
+		transcript: 'Transcript content here...',
+		audio: '/audio/TempAudio.mp3',
+		tags: ['#Apple', '#Keynote', '#Product']
 	}
 ];
 

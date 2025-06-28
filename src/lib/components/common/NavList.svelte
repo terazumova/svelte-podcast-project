@@ -1,11 +1,31 @@
 <script lang="ts">
-	import ArrowDown from '$lib/icons/ArrowDown.svelte';
+	import { goto } from '$app/navigation';
 	import Heart from '$lib/icons/Heart.svelte';
+	import Dropdown from './Dropdown.svelte';
+	import type { EpisodeType } from '$lib/types';
+
+	type Props = {
+		episodes: EpisodeType[];
+	};
+
+	let { episodes }: Props = $props();
+
+	const handleEpisodesNavigation = (value: string) =>
+		value === 'all' ? goto('/episodes') : goto(`/episodes/${value}`);
 </script>
 
 <nav class="nav">
 	<ul class="nav__list">
-		<li><a class="nav__link heading-6" href="/episodes">Episodes <ArrowDown /></a></li>
+		<li>
+			<Dropdown
+				placeholder="Episodes"
+				options={[
+					...(episodes?.map((option) => ({ label: option.title, value: option.slug })) ?? []),
+					{ label: 'View all', value: 'all' }
+				]}
+				handleChange={(option) => handleEpisodesNavigation(option.value)}
+			/>
+		</li>
 		<li>
 			<a class="nav__link heading-6" href="/blog">Blog</a>
 		</li>
@@ -22,9 +42,9 @@
 	.nav__list {
 		display: flex;
 		align-items: center;
+		gap: 39px;
 		list-style-type: none;
 		list-style: none;
-		gap: 39px;
 		text-transform: uppercase;
 	}
 

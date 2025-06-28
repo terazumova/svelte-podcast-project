@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EpisodesList from '$lib/components/latest-episodes/EpisodesList.svelte';
+	import EpisodesList from '$lib/components/episodes/EpisodesList.svelte';
 	import type { PageData } from './$types';
 
 	type Props = {
@@ -9,4 +9,4 @@
 	let { data }: Props = $props();
 </script>
 
-<EpisodesList episodes={data.episodes} />
+<EpisodesList episodes={data.episodes} total={data.total || 0} />
