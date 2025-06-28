@@ -14,7 +14,7 @@
 	let { data }: Props = $props();
 	let search = $state('');
 
-	const handleSearch = () => goto(`?search=${search}`);
+	const handleSearch = () => goto(`?search=${search}&page=1`);
 </script>
 
 <div class="search-block">

@@ -152,6 +152,10 @@
 		text-transform: none;
 	}
 
+	.footer :global(.dropdown__value) {
+		text-transform: none;
+	}
+
 	.footer :global(.nav__donate-link svg) {
 		display: none;
 	}

@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 	import ArrowLeftShort from '$lib/icons/ArrowLeftShort.svelte';
 	import ArrowRightShort from '$lib/icons/ArrowRightShort.svelte';
 	import Button from './Button.svelte';
 
 	type Props = { totalPages: number };
 	let { totalPages }: Props = $props();
-	let currentPage = $state(1);
+	let currentPage = $derived(parseInt(page.url.searchParams.get('page') || '1'));
 
 	const getPagination = (current: number, total: number): (number | string)[] => {
 		if (total <= 4) {
@@ -24,15 +25,21 @@
 		return [1, '...', current - 1, current, current + 1, '...', total];
 	};
 
-	$effect(() => {
-		goto(`?page=${currentPage}`);
-	});
+	const navigateToPage = (newPage: number) => {
+		currentPage = newPage;
+		const params = page.url.searchParams;
+		params.set('page', newPage.toString());
+
+		goto(`?${params}`);
+	};
 </script>
 
 {#if totalPages > 1}
 	<div class="pagination">
 		{#if currentPage > 1}
-			<Button variant="tertiary" onclick={() => (currentPage -= 1)}><ArrowLeftShort /></Button>
+			<Button variant="tertiary" onclick={() => navigateToPage(currentPage - 1)}
+				><ArrowLeftShort /></Button
+			>
 		{/if}
 
 		{#each getPagination(currentPage, totalPages) as page}
@@ -45,12 +52,14 @@
 					type="submit"
 					name="page"
 					value={page}
-					onclick={() => (currentPage = page)}>{page}</Button
+					onclick={() => navigateToPage(page)}>{page}</Button
 				>
 			{/if}
 		{/each}
 		{#if currentPage < totalPages}
-			<Button variant="tertiary" onclick={() => (currentPage += 1)}><ArrowRightShort /></Button>
+			<Button variant="tertiary" onclick={() => navigateToPage(currentPage + 1)}
+				><ArrowRightShort /></Button
+			>
 		{/if}
 	</div>
 {/if}

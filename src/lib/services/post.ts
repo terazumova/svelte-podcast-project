@@ -10,7 +10,7 @@ export const getPosts = async ({ search, amount }: { search?: string; amount?: n
 			}
 		});
 	} catch (error) {
-		console.error('Error getting last two posts:', error);
+		console.error('Error getting posts:', error);
 	}
 };
 

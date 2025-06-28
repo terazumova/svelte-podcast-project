@@ -49,7 +49,7 @@
 	</button>
 </header>
 {#if isSidebarVisible}
-	<Sidebar />
+	<Sidebar {episodes} />
 {/if}
 
 <style>

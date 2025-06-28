@@ -77,8 +77,8 @@
 	.dropdown__option :global(.button) {
 		width: 100%;
 		height: 100%;
-		text-align: left;
 		color: var(--color-black);
+		text-align: left;
 	}
 
 	.dropdown__option:hover {
