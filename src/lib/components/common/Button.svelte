@@ -63,6 +63,7 @@
 		color: var(--color-dark-grey);
 	}
 
+	.tertiary:not(:disabled).active,
 	.tertiary:not(:disabled):active,
 	.tertiary:not(:disabled):focus-visible,
 	.tertiary:not(:disabled):hover {
