@@ -5,14 +5,15 @@
 
 	type Props = {
 		episodes: EpisodeType[];
+		onClose: () => void;
 	};
 
-	let { episodes }: Props = $props();
+	let { episodes, onClose }: Props = $props();
 </script>
 
-<aside class="sidebar-panel" transition:fly={{ y: -300, duration: 300 }}>
-	<NavList {episodes} />
-</aside>
+<div class="sidebar-panel" transition:fly={{ y: -300, duration: 300 }}>
+	<NavList {episodes} onClose={onClose} />
+</div>
 
 <style>
 	.sidebar-panel {

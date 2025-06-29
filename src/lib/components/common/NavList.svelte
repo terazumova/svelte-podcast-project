@@ -6,12 +6,21 @@
 
 	type Props = {
 		episodes: EpisodeType[];
+		onClose?: () => void;
 	};
 
-	let { episodes }: Props = $props();
+	let { episodes, onClose }: Props = $props();
 
-	const handleEpisodesNavigation = (value: string) =>
-		value === 'all' ? goto('/episodes') : goto(`/episodes/${value}`);
+	const handleEpisodesNavigation = (slug: string) => {
+		onClose?.();
+
+		if (slug === 'all') {
+			goto('/episodes');
+			return;
+		}
+
+		goto(`/episodes/${slug}`);
+	};
 </script>
 
 <nav class="nav">
@@ -27,13 +36,15 @@
 			/>
 		</li>
 		<li>
-			<a class="nav__link heading-6" href="/blog">Blog</a>
+			<a class="nav__link heading-6" href="/blog" onclick={onClose}>Blog</a>
 		</li>
 		<li>
-			<a class="nav__link heading-6" href="/contact">Contact</a>
+			<a class="nav__link heading-6" href="/contact" onclick={onClose}>Contact</a>
 		</li>
 		<li>
-			<a class="nav__link nav__donate-link heading-6" href="/donate"><Heart /> Donate</a>
+			<a class="nav__link nav__donate-link heading-6" href="/donate" onclick={onClose}
+				><Heart /> Donate</a
+			>
 		</li>
 	</ul>
 </nav>

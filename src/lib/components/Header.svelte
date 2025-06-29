@@ -49,7 +49,7 @@
 	</button>
 </header>
 {#if isSidebarVisible}
-	<Sidebar {episodes} />
+	<Sidebar {episodes} onClose={handleCloseSidebar} />
 {/if}
 
 <style>
