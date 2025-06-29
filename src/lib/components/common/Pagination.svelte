@@ -3,7 +3,7 @@
 	import { page } from '$app/state';
 	import ArrowLeftShort from '$lib/icons/ArrowLeftShort.svelte';
 	import ArrowRightShort from '$lib/icons/ArrowRightShort.svelte';
-	import Button from './Button.svelte';
+	import Button from '$lib/components/common/Button.svelte';
 
 	type Props = { totalPages: number };
 	let { totalPages }: Props = $props();

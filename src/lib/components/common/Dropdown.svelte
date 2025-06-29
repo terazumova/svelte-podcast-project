@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ArrowDown from '$lib/icons/ArrowDown.svelte';
-	import Button from './Button.svelte';
+	import Button from '$lib/components/common/Button.svelte';
 
 	type OptionProps = { label: string; value: string };
 	type Props = {

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Episode from '$lib/components/episodes/Episode.svelte';
+	import Pagination from '$lib/components/common/Pagination.svelte';
 	import { EPISODES_PER_PAGE } from '$lib/constants';
 	import type { EpisodeType } from '$lib/types';
-	import Pagination from '../common/Pagination.svelte';
 
 	type Props = {
 		total: number;
