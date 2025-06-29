@@ -76,6 +76,10 @@
 		object-fit: cover;
 	}
 
+	.main-component__title {
+		text-align: center;
+	}
+
 	.main-component__player {
 		width: 100%;
 		max-width: 500px;

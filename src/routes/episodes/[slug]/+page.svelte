@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Episode from '$lib/components/latest-episodes/Episode.svelte';
+	import Episode from '$lib/components/episodes/Episode.svelte';
 	import type { PageData } from './$types';
 
 	type Props = {
