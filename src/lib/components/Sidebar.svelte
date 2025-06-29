@@ -11,7 +11,7 @@
 	let { episodes, onClose }: Props = $props();
 </script>
 
-<div class="sidebar-panel" transition:fly={{ y: -300, duration: 300 }}>
+<div class="sidebar-panel" transition:fly={{ x: 300, duration: 300 }}>
 	<NavList {episodes} onClose={onClose} />
 </div>
 
