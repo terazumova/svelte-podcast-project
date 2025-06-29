@@ -3,13 +3,15 @@
 	import Pagination from '$lib/components/common/Pagination.svelte';
 	import { EPISODES_PER_PAGE } from '$lib/constants';
 	import type { EpisodeType } from '$lib/types';
+	import ArrowRight from '$lib/icons/ArrowRightShort.svelte';
 
 	type Props = {
 		total: number;
 		episodes: EpisodeType[];
+		showAll?: boolean;
 	};
 
-	let { total, episodes }: Props = $props();
+	let { total, episodes, showAll = true }: Props = $props();
 </script>
 
 <section class="episodes">
@@ -23,7 +25,11 @@
 	{:else}
 		<p>No results</p>
 	{/if}
-	<Pagination totalPages={Math.ceil(total / EPISODES_PER_PAGE)} />
+	{#if !showAll}
+		<a class="episodes__link heading-5" href="/episodes">View all <ArrowRight /></a>
+	{:else}
+		<Pagination totalPages={Math.ceil(total / EPISODES_PER_PAGE)} />
+	{/if}
 </section>
 
 <style>
@@ -31,5 +37,13 @@
 		display: grid;
 		gap: 51px;
 		padding-bottom: 64px;
+	}
+
+	.episodes__link {
+		cursor: pointer;
+		border-radius: 3px;
+		background-color: var(--color-light-grey-2);
+		padding: 8px 16px;
+		width: fit-content;
 	}
 </style>

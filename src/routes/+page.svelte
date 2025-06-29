@@ -17,6 +17,6 @@
 {#if data.episodes?.[0]}
 	<MainBlock episode={data.episodes[0]} />
 {/if}
-<EpisodesList episodes={data.episodes} total={EPISODES_PER_PAGE} />
+<EpisodesList episodes={data.episodes} total={EPISODES_PER_PAGE} showAll={false} />
 <PostList posts={data.posts} showAll={false} />
 <TeamList team={data.team} showAll={false} />
