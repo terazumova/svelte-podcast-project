@@ -60,6 +60,7 @@
 		border-bottom: 1px solid var(--color-light-grey-1);
 		padding: 0 16px;
 		height: 76px;
+		width: 100%;
 	}
 
 	.header__links {

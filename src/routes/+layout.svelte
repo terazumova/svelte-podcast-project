@@ -26,6 +26,7 @@
 		flex-direction: column;
 		gap: 64px;
 		padding: 24px 16px;
+		flex-grow: 1;
 	}
 
 	@media (min-width: 1024px) {
