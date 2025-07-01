@@ -32,10 +32,10 @@
 	}
 
 	.episode__link {
-		color: var(--color-purple);
-		text-transform: uppercase;
 		display: flex;
 		align-items: center;
 		gap: 10px;
+		color: var(--color-purple);
+		text-transform: uppercase;
 	}
 </style>

@@ -2,17 +2,19 @@
 	import Facebook from '$lib/icons/Facebook.svelte';
 	import Github from '$lib/icons/Github.svelte';
 	import Twitter from '$lib/icons/Twitter.svelte';
-	import ArrowRight from '$lib/icons/ArrowRight.svelte';
+	import ArrowRight from '$lib/icons/ArrowRightShort.svelte';
 	import Input from '$lib/components/common/Input.svelte';
 	import { type SubscriptionSchema } from '$lib/schemas/subscription';
 	import NavList from '$lib/components/common/NavList.svelte';
 	import { superForm, type SuperValidated } from 'sveltekit-superforms';
+	import type { EpisodeType } from '$lib/types';
 
 	type Props = {
 		form: SuperValidated<SubscriptionSchema>;
+		episodes: EpisodeType[];
 	};
 
-	let { form }: Props = $props();
+	let { form, episodes }: Props = $props();
 	const {
 		form: formData,
 		message,
@@ -25,16 +27,16 @@
 
 <footer class="footer">
 	<div class="footer__container">
-		<NavList />
+		<NavList {episodes} />
 		<form class="footer__newsletter" action="/subscribe" method="post" use:enhance>
 			<p class="footer__newsletter-title">Newsletter</p>
 			<p class="footer__newsletter-description">Sign up now; get closer to our action.</p>
 			<Input
-				id="email"
 				name="email"
-				value={$formData.email}
+				bind:value={$formData.email}
 				placeholder="Email address..."
 				errors={$errors.email}
+				autocomplete="on"
 			>
 				{#snippet button()}
 					<button class="footer__input-button" type="submit">
@@ -86,42 +88,46 @@
 
 <style>
 	.footer {
-		max-width: 670px;
 		margin: auto;
-		padding: 64px 0 39px 0;
+		padding: 24px 16px;
+		width: 100%;
 	}
 
 	.footer__container {
 		display: flex;
-		align-items: start;
+		flex-direction: column;
 		justify-content: space-between;
-		padding: 64px 0 89px;
+		align-items: start;
 		border-top: 1px solid var(--color-light-grey-1);
+		padding: 24px 0 64px;
 	}
 
 	.footer__newsletter {
-		min-width: 375px;
 		position: relative;
+		margin: auto;
+		padding-top: 32px;
+		width: 100%;
+		max-width: 500px;
 	}
 
 	.footer__newsletter-title {
-		font-size: var(--fs-h4);
+		margin-bottom: 8px;
 		font-weight: var(--fw-regular);
+		font-size: var(--fs-h4);
 		letter-spacing: 16%;
 		text-transform: uppercase;
-		margin-bottom: 8px;
 	}
 
 	.footer__newsletter-description {
-		font-size: var(--fs-h6);
-		font-weight: var(--fw-regular);
 		margin-bottom: 14px;
+		font-weight: var(--fw-regular);
+		font-size: var(--fs-h6);
 	}
 
 	.footer__social {
 		display: flex;
-		align-items: center;
 		justify-content: center;
+		align-items: center;
 		gap: 24px;
 	}
 
@@ -130,13 +136,13 @@
 	}
 
 	.footer__input-button {
+		cursor: pointer;
 		border: none;
-		background-color: var(--color-purple);
-		color: var(--color-white);
 		border-radius: 4px;
+		background-color: var(--color-purple);
 		min-width: 36px;
 		height: 36px;
-		cursor: pointer;
+		color: var(--color-white);
 	}
 
 	.footer :global(.nav__list) {
@@ -146,15 +152,37 @@
 		text-transform: none;
 	}
 
+	.footer :global(.dropdown__value) {
+		text-transform: none;
+	}
+
 	.footer :global(.nav__donate-link svg) {
 		display: none;
 	}
 
 	.footer__message {
-		font-size: var(--fs-h6);
-		font-weight: var(--fw-regular);
 		position: absolute;
-		left: 0;
 		bottom: -24px;
+		left: 0;
+		font-weight: var(--fw-regular);
+		font-size: var(--fs-h6);
+	}
+
+	@media (min-width: 1024px) {
+		.footer {
+			padding: 0 0 39px 0;
+			max-width: 670px;
+		}
+
+		.footer__container {
+			flex-direction: row;
+			padding: 64px 0 89px;
+		}
+
+		.footer__newsletter {
+			margin: unset;
+			padding-top: 0;
+			width: 375px;
+		}
 	}
 </style>

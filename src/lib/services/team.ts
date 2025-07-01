@@ -1,10 +1,21 @@
 import prisma from '$lib/server/prisma';
 
-export const getTeamMembers = async () => {
+export const getTeamMembers = async ({
+	search,
+	amount,
+	showOnMainPage
+}: {
+	search?: string;
+	amount?: number;
+	showOnMainPage?: boolean;
+}) => {
 	try {
 		return await prisma.teamMember.findMany({
-			where: { showOnMainPage: true },
-			take: 2
+			where: {
+				name: { contains: search, mode: 'insensitive' },
+				showOnMainPage
+			},
+			take: amount
 		});
 	} catch (error) {
 		console.error('Error getting team members:', error);

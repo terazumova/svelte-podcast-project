@@ -1,27 +1,17 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import type { HTMLInputAttributes } from 'svelte/elements';
 
-	type Props = {
-		id: string;
-		name: string;
-		value: string;
-		placeholder?: string;
+	type Props = HTMLInputAttributes & {
 		errors?: string[];
 		button: Snippet;
 	};
 
-	let { id, name, value, placeholder, errors, button }: Props = $props();
+	let { value = $bindable(), errors, button, ...rest }: Props = $props();
 </script>
 
 <div class="input-block">
-	<input
-		class="input-block__input"
-		{id}
-		{name}
-		{placeholder}
-		bind:value
-		oninput={() => (errors = [])}
-	/>
+	<input {...rest} class="input-block__input" bind:value oninput={() => (errors = [])} />
 	{#if button}
 		{@render button()}
 	{/if}
