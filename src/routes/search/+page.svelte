@@ -20,12 +20,12 @@
 <div class="search-block">
 	<h1 class="visually-hidden">Search</h1>
 	<Input
-		id="search"
 		name="text"
 		bind:value={search}
 		placeholder="Enter search text..."
 		errors={[]}
 		onkeydown={(e) => (e.key === 'Enter' ? handleSearch() : null)}
+		autocomplete="on"
 	>
 		{#snippet button()}
 			<button class="button" onclick={handleSearch}>

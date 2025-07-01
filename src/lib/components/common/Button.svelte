@@ -4,22 +4,14 @@
 
 	type Props = HTMLButtonAttributes & {
 		variant: 'primary' | 'secondary' | 'tertiary' | 'text';
-		isActive?: boolean;
+		active?: boolean;
 		children: Snippet;
 	};
 
-	let { variant = 'primary', isActive = false, children, ...rest }: Props = $props();
+	let { variant = 'primary', active = false, children, ...rest }: Props = $props();
 </script>
 
-<button
-	class="button"
-	class:active={isActive}
-	class:primary={variant === 'primary'}
-	class:secondary={variant === 'secondary'}
-	class:tertiary={variant === 'tertiary'}
-	class:text={variant === 'text'}
-	{...rest}>{@render children()}</button
->
+<button class="button {variant}" class:active {...rest}>{@render children()}</button>
 
 <style>
 	.button {
@@ -40,11 +32,13 @@
 		color: var(--color-purple);
 	}
 
-	.primary:not(:disabled):active,
-	.primary:not(:disabled):focus-visible,
-	.primary:not(:disabled):hover {
-		background-color: var(--color-purple);
-		color: var(--color-white);
+	.primary:not(:disabled) {
+		&:active,
+		&:focus-visible,
+		&:hover {
+			background-color: var(--color-purple);
+			color: var(--color-white);
+		}
 	}
 
 	.secondary {
@@ -52,10 +46,12 @@
 		color: var(--color-white);
 	}
 
-	.secondary:not(:disabled):active,
-	.secondary:not(:disabled):focus-visible,
-	.secondary:not(:disabled):hover {
-		background-color: var(--color-dark-purple);
+	.secondary:not(:disabled) {
+		&:active,
+		&:focus-visible,
+		&:hover {
+			background-color: var(--color-dark-purple);
+		}
 	}
 
 	.tertiary {
@@ -63,11 +59,13 @@
 		color: var(--color-dark-grey);
 	}
 
-	.tertiary:not(:disabled).active,
-	.tertiary:not(:disabled):active,
-	.tertiary:not(:disabled):focus-visible,
-	.tertiary:not(:disabled):hover {
-		background-color: var(--color-light-grey-1);
+	.tertiary:not(:disabled) {
+		&.active,
+		&:active,
+		&:focus-visible,
+		&:hover {
+			background-color: var(--color-light-grey-1);
+		}
 	}
 
 	.text {
@@ -76,9 +74,11 @@
 		color: var(--color-purple);
 	}
 
-	.text:not(:disabled):active,
-	.text:not(:disabled):focus-visible,
-	.text:not(:disabled):hover {
-		color: var(--color-dark-purple);
+	.text:not(:disabled) {
+		&:active,
+		&:focus-visible,
+		&:hover {
+			color: var(--color-dark-purple);
+		}
 	}
 </style>

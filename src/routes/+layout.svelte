@@ -15,7 +15,7 @@
 </script>
 
 <Header episodes={data.episodes} />
-<main class="container">
+<main id="main-content" class="container">
 	{@render children()}
 </main>
 <Footer episodes={data.episodes} form={data.form} />
@@ -23,10 +23,10 @@
 <style>
 	.container {
 		display: flex;
+		flex-grow: 1;
 		flex-direction: column;
 		gap: 64px;
 		padding: 24px 16px;
-		flex-grow: 1;
 	}
 
 	@media (min-width: 1024px) {

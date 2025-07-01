@@ -47,7 +47,7 @@
 				<Button variant="tertiary" disabled>{page}</Button>
 			{:else}
 				<Button
-					isActive={page === currentPage}
+					active={page === currentPage}
 					variant="tertiary"
 					type="submit"
 					name="page"

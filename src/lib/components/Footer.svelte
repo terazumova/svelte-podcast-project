@@ -32,11 +32,11 @@
 			<p class="footer__newsletter-title">Newsletter</p>
 			<p class="footer__newsletter-description">Sign up now; get closer to our action.</p>
 			<Input
-				id="email"
 				name="email"
 				bind:value={$formData.email}
 				placeholder="Email address..."
 				errors={$errors.email}
+				autocomplete="on"
 			>
 				{#snippet button()}
 					<button class="footer__input-button" type="submit">
