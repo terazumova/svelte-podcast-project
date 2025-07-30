@@ -1,23 +1,30 @@
 <script lang="ts">
 	import PostItem from '$lib/components/posts/PostItem.svelte';
-	import ArrowRight from '$lib/icons/ArrowRight.svelte';
+	import ArrowRight from '$lib/icons/ArrowRightShort.svelte';
 	import type { PostType } from '$lib/types';
 
 	type Props = {
 		posts: PostType[];
+		showAll?: boolean;
 	};
 
-	let { posts }: Props = $props();
+	let { posts, showAll = true }: Props = $props();
 </script>
 
 <section class="posts">
-	<h2 class="posts__title heading-1">Latest Posts</h2>
-	<ul class="post__list">
-		{#each posts as post (post.id)}
-			<li><PostItem {...post} /></li>
-		{/each}
-	</ul>
-	<a class="posts__link heading-5" href="/blog">View Blog <ArrowRight /></a>
+	<h2 class="posts__title heading-1">{showAll ? 'Posts' : 'Latest Posts'}</h2>
+	{#if posts.length}
+		<ul class="post__list">
+			{#each posts as post (post.id)}
+				<li><PostItem {...post} /></li>
+			{/each}
+		</ul>
+	{:else}
+		<p>No results</p>
+	{/if}
+	{#if !showAll}
+		<a class="posts__link heading-5" href="/blog">View Blog <ArrowRight /></a>
+	{/if}
 </section>
 
 <style>
@@ -33,10 +40,10 @@
 	}
 
 	.posts__link {
-		width: fit-content;
-		background-color: var(--color-light-grey-2);
-		border-radius: 3px;
-		padding: 8px 16px;
 		cursor: pointer;
+		border-radius: 3px;
+		background-color: var(--color-light-grey-2);
+		padding: 8px 16px;
+		width: fit-content;
 	}
 </style>

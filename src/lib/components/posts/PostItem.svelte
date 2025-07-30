@@ -17,6 +17,7 @@
 <style>
 	.post-item {
 		display: flex;
+		flex-direction: column;
 		align-items: start;
 		gap: 39px;
 	}
@@ -40,5 +41,11 @@
 	.post-item__date {
 		color: var(--color-grey);
 		margin-bottom: 39px;
+	}
+
+	@media (min-width: 1024px) {
+		.post-item {
+			flex-direction: row;
+		}
 	}
 </style>

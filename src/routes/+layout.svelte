@@ -14,19 +14,26 @@
 	let { children, data }: Props = $props();
 </script>
 
-<Header />
-<main class="container">
+<Header episodes={data.episodes} />
+<main id="main-content" class="container">
 	{@render children()}
 </main>
-<Footer form={data.form} />
+<Footer episodes={data.episodes} form={data.form} />
 
 <style>
 	.container {
-		max-width: 670px;
-		margin: 0 auto;
 		display: flex;
+		flex-grow: 1;
 		flex-direction: column;
-		gap: 70px;
-		padding-top: 64px;
+		gap: 64px;
+		padding: 24px 16px;
+	}
+
+	@media (min-width: 1024px) {
+		.container {
+			gap: 70px;
+			padding: 64px 0;
+			max-width: 670px;
+		}
 	}
 </style>
