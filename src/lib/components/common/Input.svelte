@@ -4,7 +4,7 @@
 
 	type Props = HTMLInputAttributes & {
 		errors?: string[];
-		button: Snippet;
+		button?: Snippet;
 	};
 
 	let { value = $bindable(), errors, button, ...rest }: Props = $props();

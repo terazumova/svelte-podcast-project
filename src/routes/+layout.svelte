@@ -5,6 +5,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import type { Snippet } from 'svelte';
 	import type { LayoutData } from './$types';
+	import { EPISODES_PER_PAGE } from '$lib/constants';
 
 	type Props = {
 		children: Snippet;
@@ -14,7 +15,7 @@
 	let { children, data }: Props = $props();
 </script>
 
-<Header episodes={data.episodes} />
+<Header episodes={data.episodes.slice(0, EPISODES_PER_PAGE)} />
 <main id="main-content" class="container">
 	{@render children()}
 </main>

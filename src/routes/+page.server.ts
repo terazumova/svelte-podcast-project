@@ -5,7 +5,7 @@ import { getTeamMembers } from '$lib/services/team';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const episodes = (await getEpisodes(1, EPISODES_PER_PAGE)) ?? [];
+	const episodes = (await getEpisodes({ amount: EPISODES_PER_PAGE })) ?? [];
 	const posts = (await getPosts({ amount: POSTS_PER_PAGE })) ?? [];
 	const team =
 		(await getTeamMembers({ amount: TEAM_MEMBERS_PER_PAGE, showOnMainPage: true })) ?? [];

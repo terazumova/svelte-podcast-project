@@ -1,7 +1,9 @@
 <script lang="ts">
 	import PostItem from '$lib/components/posts/PostItem.svelte';
+	import { POSTS_PER_PAGE } from '$lib/constants';
 	import ArrowRight from '$lib/icons/ArrowRightShort.svelte';
 	import type { PostType } from '$lib/types';
+	import Pagination from '$lib/components/common/Pagination.svelte';
 
 	type Props = {
 		posts: PostType[];
@@ -9,13 +11,20 @@
 	};
 
 	let { posts, showAll = true }: Props = $props();
+	let currentPage = $state(1);
+	let currentPosts: PostType[] = $state([]);
+	const totalPages = $derived(Math.ceil(posts.length / POSTS_PER_PAGE));
+
+	$effect(() => {
+		currentPosts = posts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+	});
 </script>
 
 <section class="posts">
 	<h2 class="posts__title heading-1">{showAll ? 'Posts' : 'Latest Posts'}</h2>
-	{#if posts.length}
+	{#if currentPosts.length}
 		<ul class="post__list">
-			{#each posts as post (post.id)}
+			{#each currentPosts as post (post.id)}
 				<li><PostItem {...post} /></li>
 			{/each}
 		</ul>
@@ -24,6 +33,8 @@
 	{/if}
 	{#if !showAll}
 		<a class="posts__link heading-5" href="/blog">View Blog <ArrowRight /></a>
+	{:else if totalPages > 1}
+		<Pagination bind:currentPage {totalPages} />
 	{/if}
 </section>
 

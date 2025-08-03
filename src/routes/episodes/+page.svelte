@@ -9,4 +9,4 @@
 	let { data }: Props = $props();
 </script>
 
-<EpisodesList episodes={data.episodes} total={data.total || 0} />
+<EpisodesList episodes={data.episodes} />

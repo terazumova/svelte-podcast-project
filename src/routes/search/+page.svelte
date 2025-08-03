@@ -1,39 +1,51 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import Input from '$lib/components/common/Input.svelte';
 	import EpisodesList from '$lib/components/episodes/EpisodesList.svelte';
 	import PostList from '$lib/components/posts/PostList.svelte';
 	import TeamList from '$lib/components/team/TeamList.svelte';
-	import Search from '$lib/icons/Search.svelte';
-	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
+	import type { EpisodeType, PostType, TeamMemberType } from '$lib/types';
+	import SearchWorker from '$lib/search-worker?worker';
 
-	type Props = {
-		data: PageData;
-	};
+	let search: 'idle' | 'load' | 'ready' = $state('idle');
+	let searchTerm = $state('');
+	let data: { episodes: EpisodeType[]; posts: PostType[]; team: TeamMemberType[] } = $state({
+		episodes: [],
+		posts: [],
+		team: []
+	});
+	let searchWorker: Worker;
 
-	let { data }: Props = $props();
-	let search = $state('');
+	onMount(async () => {
+		searchWorker = new SearchWorker();
 
-	const handleSearch = () => goto(`?search=${search}&page=1`);
+		searchWorker.addEventListener('message', (e) => {
+			const { type, payload } = e.data;
+
+			type === 'ready' && (search = 'ready');
+			type === 'results' && (data = payload.results);
+		});
+
+		searchWorker.postMessage({ type: 'load' });
+	});
+
+	$effect(() => {
+		if (search === 'ready') {
+			searchWorker.postMessage({ type: 'search', payload: { searchTerm } });
+		}
+	});
 </script>
 
 <div class="search-block">
 	<h1 class="visually-hidden">Search</h1>
 	<Input
 		name="text"
-		bind:value={search}
+		bind:value={searchTerm}
 		placeholder="Enter search text..."
 		errors={[]}
-		onkeydown={(e) => (e.key === 'Enter' ? handleSearch() : null)}
 		autocomplete="on"
-	>
-		{#snippet button()}
-			<button class="button" onclick={handleSearch}>
-				<Search />
-			</button>
-		{/snippet}</Input
-	>
-	<EpisodesList episodes={data.episodes} total={data.episodesTotal} />
+	/>
+	<EpisodesList episodes={data.episodes} />
 	<PostList posts={data.posts} />
 	<TeamList team={data.team} />
 </div>
@@ -46,18 +58,5 @@
 
 	.search-block :global(.input-block__input) {
 		font-size: var(--fs-h5);
-	}
-
-	.search-block .button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		border: none;
-		border-radius: 4px;
-		background-color: var(--color-purple);
-		min-width: 36px;
-		height: 36px;
-		color: var(--color-white);
 	}
 </style>
