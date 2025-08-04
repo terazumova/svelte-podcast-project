@@ -12,15 +12,10 @@
 
 	let { team, showAll = true }: Props = $props();
 	let currentPage = $state(1);
-	let currentTeamMembers: TeamMemberType[] = $state([]);
+	let currentTeamMembers: TeamMemberType[] = $derived(
+		team.slice((currentPage - 1) * TEAM_MEMBERS_PER_PAGE, currentPage * TEAM_MEMBERS_PER_PAGE) ?? []
+	);
 	const totalPages = $derived(Math.ceil(team.length / TEAM_MEMBERS_PER_PAGE));
-
-	$effect(() => {
-		currentTeamMembers = team.slice(
-			(currentPage - 1) * TEAM_MEMBERS_PER_PAGE,
-			currentPage * TEAM_MEMBERS_PER_PAGE
-		);
-	});
 </script>
 
 <section class="team">

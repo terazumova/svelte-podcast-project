@@ -45,9 +45,11 @@
 		errors={[]}
 		autocomplete="on"
 	/>
-	<EpisodesList episodes={data.episodes} />
-	<PostList posts={data.posts} />
-	<TeamList team={data.team} />
+	{#key data}
+		<EpisodesList episodes={data.episodes} />
+		<PostList posts={data.posts} />
+		<TeamList team={data.team} />
+	{/key}
 </div>
 
 <style>

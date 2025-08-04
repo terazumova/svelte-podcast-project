@@ -12,12 +12,10 @@
 
 	let { posts, showAll = true }: Props = $props();
 	let currentPage = $state(1);
-	let currentPosts: PostType[] = $state([]);
+	let currentPosts: PostType[] = $derived(
+		posts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE) ?? []
+	);
 	const totalPages = $derived(Math.ceil(posts.length / POSTS_PER_PAGE));
-
-	$effect(() => {
-		currentPosts = posts.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
-	});
 </script>
 
 <section class="posts">

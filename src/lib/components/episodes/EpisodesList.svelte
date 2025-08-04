@@ -13,15 +13,10 @@
 	let { episodes, showAll = true }: Props = $props();
 
 	let currentPage = $state(1);
-	let currentEpisodes: EpisodeType[] = $state([]);
+	let currentEpisodes: EpisodeType[] = $derived(
+		episodes.slice((currentPage - 1) * EPISODES_PER_PAGE, currentPage * EPISODES_PER_PAGE) ?? []
+	);
 	const totalPages = $derived(Math.ceil(episodes.length / EPISODES_PER_PAGE));
-
-	$effect(() => {
-		currentEpisodes = episodes.slice(
-			(currentPage - 1) * EPISODES_PER_PAGE,
-			currentPage * EPISODES_PER_PAGE
-		);
-	});
 </script>
 
 <section class="episodes">
