@@ -1,5 +1,5 @@
+import type { EpisodeType, PostType, TeamMemberType } from '$lib/types';
 import * as FlexSearch from 'flexsearch';
-import type { EpisodeType, PostType, TeamMemberType } from './types';
 
 let episodesIndex: FlexSearch.Index;
 let episodes: EpisodeType[];
@@ -24,13 +24,13 @@ export function createIndex({
 	teamIndex = new FlexSearch.Index({ tokenize: 'forward' });
 
 	episodesData.forEach((episode, i) => {
-		const item = `${episode.title} ${episode.abstract} ${episode.description}`;
+		const item = `${episode.title} ${episode.description}`;
 		episodesIndex.add(i, item);
 	});
 	episodes = episodesData;
 
 	postsData.forEach((post, i) => {
-		const item = `${post.title} ${post.abstract}`;
+		const item = post.title;
 		postsIndex.add(i, item);
 	});
 	posts = postsData;
@@ -52,30 +52,28 @@ export function searchIndex(searchTerm: string) {
 	return {
 		episodes: searchTerm
 			? episodesResults
-					.map((_, index: number) => episodes[index])
+					.map((Id) => episodes[Id as number])
 					.map((item: EpisodeType) => {
 						return {
 							...item,
 							title: replaceTextWithMarker(item.title, match),
-							abstract: getMatches(item.abstract, match),
-							description: getMatches(item.description, match)
+							description: replaceTextWithMarker(item.description, match)
 						};
 					})
 			: episodes,
 		posts: searchTerm
 			? postsResults
-					.map((_, index: number) => posts[index])
+					.map((Id) => posts[Id as number])
 					.map((item: PostType) => {
 						return {
 							...item,
-							title: replaceTextWithMarker(item.title, match),
-							abstract: getMatches(item.abstract, match)
+							title: replaceTextWithMarker(item.title, match)
 						};
 					})
 			: posts,
 		team: searchTerm
 			? teamResults
-					.map((_, index: number) => team[index])
+					.map((Id) => team[Id as number])
 					.map((item: TeamMemberType) => {
 						return {
 							...item,
@@ -85,25 +83,6 @@ export function searchIndex(searchTerm: string) {
 					})
 			: team
 	};
-}
-
-function getMatches(text: string, searchTerm: string, limit = 1) {
-	const regex = new RegExp(searchTerm, 'gi');
-	const indexes = [];
-	let matches = 0;
-	let match;
-
-	while ((match = regex.exec(text)) !== null && matches < limit) {
-		indexes.push(match.index);
-		matches++;
-	}
-
-	return indexes.map((index) => {
-		const start = index - 20;
-		const end = index + 80;
-		const excerpt = text.substring(start, end).trim();
-		return `...${replaceTextWithMarker(excerpt, searchTerm)}...`;
-	});
 }
 
 function replaceTextWithMarker(text: string, match: string) {

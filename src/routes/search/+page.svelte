@@ -5,7 +5,7 @@
 	import TeamList from '$lib/components/team/TeamList.svelte';
 	import { onMount } from 'svelte';
 	import type { EpisodeType, PostType, TeamMemberType } from '$lib/types';
-	import SearchWorker from '$lib/search-worker?worker';
+	import SearchWorker from '$lib/search/worker?worker';
 
 	let search: 'idle' | 'load' | 'ready' = $state('idle');
 	let searchTerm = $state('');

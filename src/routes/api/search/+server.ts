@@ -4,7 +4,7 @@ import type { RequestHandler } from './$types';
 import { getTeamMembers } from '$lib/services/team';
 import { getEpisodes } from '$lib/services/episode';
 
-export const prerender = true;
+export const prerender = false;
 
 export const GET: RequestHandler = async ({ url }) => {
 	const search = url.searchParams.get('search') ?? undefined;
