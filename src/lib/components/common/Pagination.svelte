@@ -30,7 +30,11 @@
 {#if totalPages > 1}
 	<div class="pagination">
 		{#if currentPage > 1}
-			<Button variant="tertiary" onclick={() => navigateToPage(currentPage - 1)}>
+			<Button
+				variant="tertiary"
+				onclick={() => navigateToPage(currentPage - 1)}
+				aria-label="go to previous page"
+			>
 				<ArrowLeftShort />
 			</Button>
 		{/if}
@@ -48,7 +52,11 @@
 			{/if}
 		{/each}
 		{#if currentPage < totalPages}
-			<Button variant="tertiary" onclick={() => navigateToPage(currentPage + 1)}>
+			<Button
+				variant="tertiary"
+				onclick={() => navigateToPage(currentPage + 1)}
+				aria-label="go to next page"
+			>
 				<ArrowRightShort />
 			</Button>
 		{/if}
