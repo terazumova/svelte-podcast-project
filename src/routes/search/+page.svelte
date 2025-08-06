@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import type { EpisodeType, PostType, TeamMemberType } from '$lib/types';
 	import SearchWorker from '$lib/search/worker?worker';
+	import Spinner from '$lib/components/common/Spinner.svelte';
 
 	let search: 'idle' | 'load' | 'ready' = $state('idle');
 	let searchTerm = $state('');
@@ -15,6 +16,7 @@
 		team: []
 	});
 	let searchWorker: Worker;
+	let timer: NodeJS.Timeout;
 
 	onMount(async () => {
 		searchWorker = new SearchWorker();
@@ -22,34 +24,58 @@
 		searchWorker.addEventListener('message', (e) => {
 			const { type, payload } = e.data;
 
-			type === 'ready' && (search = 'ready');
+			type === 'ready' && searchTerm === '' && handleSearch();
 			type === 'results' && (data = payload.results);
+
+			search = 'ready';
 		});
 
 		searchWorker.postMessage({ type: 'load' });
 	});
 
-	$effect(() => {
-		if (search === 'ready') {
-			searchWorker.postMessage({ type: 'search', payload: { searchTerm } });
+	const handleSearch = () => searchWorker.postMessage({ type: 'search', payload: { searchTerm } });
+
+	const handleDebouncedSearch = (value: string) => {
+		searchTerm = value;
+
+		if (search !== 'load') {
+			search = 'load';
+
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				handleSearch();
+			}, 500);
 		}
-	});
+	};
 </script>
 
 <div class="search-block">
 	<h1 class="visually-hidden">Search</h1>
 	<Input
 		name="text"
-		bind:value={searchTerm}
 		placeholder="Enter search text..."
 		errors={[]}
 		autocomplete="on"
+		onkeyup={(e: KeyboardEvent) => handleDebouncedSearch((e.target as HTMLInputElement).value)}
 	/>
-	{#key data}
-		<EpisodesList episodes={data.episodes} />
-		<PostList posts={data.posts} />
-		<TeamList team={data.team} />
-	{/key}
+	{#if search !== 'ready'}
+		<Spinner />
+	{:else}
+		{#key data}
+			{#if data.episodes.length}
+				<EpisodesList episodes={data.episodes} />
+			{/if}
+			{#if data.posts.length}
+				<PostList posts={data.posts} />
+			{/if}
+			{#if data.team.length}
+				<TeamList team={data.team} />
+			{/if}
+			{#if !data.episodes.length && !data.posts.length && !data.team.length}
+				<p>No results</p>
+			{/if}
+		{/key}
+	{/if}
 </div>
 
 <style>
