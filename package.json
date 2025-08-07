@@ -40,6 +40,7 @@
 	"dependencies": {
 		"@fontsource/source-serif-pro": "5.2.5",
 		"flexsearch": "0.8.205",
-		"prisma": "6.8.2"
+		"prisma": "6.8.2",
+		"runed": "0.31.1"
 	}
 }

@@ -7,16 +7,17 @@
 	import type { EpisodeType, PostType, TeamMemberType } from '$lib/types';
 	import SearchWorker from '$lib/search/worker?worker';
 	import Spinner from '$lib/components/common/Spinner.svelte';
+	import { Debounced } from 'runed';
 
-	let search: 'idle' | 'load' | 'ready' = $state('idle');
+	let search = $state<'idle' | 'ready'>('idle');
 	let searchTerm = $state('');
-	let data: { episodes: EpisodeType[]; posts: PostType[]; team: TeamMemberType[] } = $state({
-		episodes: [],
-		posts: [],
-		team: []
-	});
+	let results = $state<{
+		episodes: EpisodeType[];
+		posts: PostType[];
+		team: TeamMemberType[];
+	} | null>(null);
+
 	let searchWorker: Worker;
-	let timer: NodeJS.Timeout;
 
 	onMount(async () => {
 		searchWorker = new SearchWorker();
@@ -24,29 +25,20 @@
 		searchWorker.addEventListener('message', (e) => {
 			const { type, payload } = e.data;
 
-			type === 'ready' && searchTerm === '' && handleSearch();
-			type === 'results' && (data = payload.results);
-
-			search = 'ready';
+			type === 'ready' && (search = 'ready');
+			type === 'results' && (results = payload.results);
 		});
 
 		searchWorker.postMessage({ type: 'load' });
 	});
 
-	const handleSearch = () => searchWorker.postMessage({ type: 'search', payload: { searchTerm } });
+	const debounced = new Debounced(() => searchTerm, 500);
 
-	const handleDebouncedSearch = (value: string) => {
-		searchTerm = value;
-
-		if (search !== 'load') {
-			search = 'load';
-
-			clearTimeout(timer);
-			timer = setTimeout(() => {
-				handleSearch();
-			}, 500);
+	$effect(() => {
+		if (search === 'ready') {
+			searchWorker.postMessage({ type: 'search', payload: { searchTerm: debounced.current } });
 		}
-	};
+	});
 </script>
 
 <div class="search-block">
@@ -56,22 +48,22 @@
 		placeholder="Enter search text..."
 		errors={[]}
 		autocomplete="on"
-		onkeyup={(e: KeyboardEvent) => handleDebouncedSearch((e.target as HTMLInputElement).value)}
+		bind:value={searchTerm}
 	/>
 	{#if search !== 'ready'}
 		<Spinner />
-	{:else}
-		{#key data}
-			{#if data.episodes.length}
-				<EpisodesList episodes={data.episodes} />
+	{:else if results}
+		{#key results}
+			{#if results.episodes.length}
+				<EpisodesList episodes={results.episodes} />
 			{/if}
-			{#if data.posts.length}
-				<PostList posts={data.posts} />
+			{#if results.posts.length}
+				<PostList posts={results.posts} />
 			{/if}
-			{#if data.team.length}
-				<TeamList team={data.team} />
+			{#if results.team.length}
+				<TeamList team={results.team} />
 			{/if}
-			{#if !data.episodes.length && !data.posts.length && !data.team.length}
+			{#if !results.episodes.length && !results.posts.length && !results.team.length}
 				<p>No results</p>
 			{/if}
 		{/key}
