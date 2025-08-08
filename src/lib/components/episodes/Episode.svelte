@@ -10,8 +10,8 @@
 	<div class="episode__tags heading-5">
 		{category} | {formatDate(date)}
 	</div>
-	<h3 class="episode__title heading-2">{episodeNumber} - {title}</h3>
-	<p class="episode__description heading-4">{description}</p>
+	<h3 class="episode__title heading-2">{episodeNumber} - {@html title}</h3>
+	<p class="episode__description heading-4">{@html description}</p>
 	<a class="episode__link heading-6" href={`/episodes/${slug}`}><Play /> listen now</a>
 </div>
 

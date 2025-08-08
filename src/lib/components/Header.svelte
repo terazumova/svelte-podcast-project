@@ -15,6 +15,8 @@
 	const toggleMenu = () => {
 		isMenuVisible = !isMenuVisible;
 	};
+
+	const closeMenu = () => (isMenuVisible = false);
 </script>
 
 <svelte:body use:lockscroll={isMenuVisible} />
@@ -30,8 +32,8 @@
 		</button>
 	</div>
 	<div class="header__menu" class:header__menu--visible={isMenuVisible}>
-		<NavList {episodes} onClose={() => (isMenuVisible = false)} />
-		<a href="/search"><Search /></a>
+		<NavList {episodes} onClose={closeMenu} />
+		<a href="/search" onclick={closeMenu}><Search /></a>
 	</div>
 </header>
 

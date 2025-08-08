@@ -4,7 +4,7 @@
 
 	type Props = HTMLInputAttributes & {
 		errors?: string[];
-		button: Snippet;
+		button?: Snippet;
 	};
 
 	let { value = $bindable(), errors, button, ...rest }: Props = $props();
@@ -26,32 +26,32 @@
 <style>
 	.input-block {
 		display: flex;
+		position: relative;
 		align-items: center;
-		width: 100%;
-		border-radius: 4px;
 		border: none;
+		border-radius: 4px;
 		background-color: var(--color-light-grey-2);
 		padding-right: 3px;
-		position: relative;
+		width: 100%;
 	}
 
 	.input-block:focus {
-		border: 1px solid var(--color-purple);
 		outline: none;
+		border: 1px solid var(--color-purple);
 	}
 
 	.input-block:disabled {
-		background-color: var(--color-grey);
 		cursor: not-allowed;
+		background-color: var(--color-grey);
 	}
 
 	.input-block__input {
-		font-size: var(--fs-h6);
-		font-weight: var(--fw-regular);
-		padding: 14px 0 14px 14px;
-		background-color: transparent;
 		border: none;
+		background-color: transparent;
+		padding: 14px 0 14px 14px;
 		width: 100%;
+		font-weight: var(--fw-regular);
+		font-size: var(--fs-h6);
 	}
 
 	.input-block__input:focus {
@@ -59,10 +59,10 @@
 	}
 
 	.input-block__message {
-		font-size: var(--fs-h6);
-		font-weight: var(--fw-regular);
 		position: absolute;
-		left: 0;
 		bottom: -24px;
+		left: 0;
+		font-weight: var(--fw-regular);
+		font-size: var(--fs-h6);
 	}
 </style>
