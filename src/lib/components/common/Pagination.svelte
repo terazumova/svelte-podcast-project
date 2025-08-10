@@ -1,13 +1,10 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import { page } from '$app/state';
 	import ArrowLeftShort from '$lib/icons/ArrowLeftShort.svelte';
 	import ArrowRightShort from '$lib/icons/ArrowRightShort.svelte';
 	import Button from '$lib/components/common/Button.svelte';
 
-	type Props = { totalPages: number };
-	let { totalPages }: Props = $props();
-	let currentPage = $derived(parseInt(page.url.searchParams.get('page') || '1'));
+	type Props = { currentPage: number; totalPages: number };
+	let { currentPage = $bindable(), totalPages }: Props = $props();
 
 	const getPagination = (current: number, total: number): (number | string)[] => {
 		if (total <= 4) {
@@ -27,19 +24,19 @@
 
 	const navigateToPage = (newPage: number) => {
 		currentPage = newPage;
-		const params = page.url.searchParams;
-		params.set('page', newPage.toString());
-
-		goto(`?${params}`);
 	};
 </script>
 
 {#if totalPages > 1}
 	<div class="pagination">
 		{#if currentPage > 1}
-			<Button variant="tertiary" onclick={() => navigateToPage(currentPage - 1)}
-				><ArrowLeftShort /></Button
+			<Button
+				variant="tertiary"
+				onclick={() => navigateToPage(currentPage - 1)}
+				aria-label="go to previous page"
 			>
+				<ArrowLeftShort />
+			</Button>
 		{/if}
 
 		{#each getPagination(currentPage, totalPages) as page}
@@ -49,17 +46,19 @@
 				<Button
 					active={page === currentPage}
 					variant="tertiary"
-					type="submit"
-					name="page"
-					value={page}
+					type="button"
 					onclick={() => navigateToPage(page)}>{page}</Button
 				>
 			{/if}
 		{/each}
 		{#if currentPage < totalPages}
-			<Button variant="tertiary" onclick={() => navigateToPage(currentPage + 1)}
-				><ArrowRightShort /></Button
+			<Button
+				variant="tertiary"
+				onclick={() => navigateToPage(currentPage + 1)}
+				aria-label="go to next page"
 			>
+				<ArrowRightShort />
+			</Button>
 		{/if}
 	</div>
 {/if}

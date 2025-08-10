@@ -6,19 +6,25 @@
 	import ArrowRight from '$lib/icons/ArrowRightShort.svelte';
 
 	type Props = {
-		total: number;
 		episodes: EpisodeType[];
 		showAll?: boolean;
 	};
 
-	let { total, episodes, showAll = true }: Props = $props();
+	let { episodes, showAll = true }: Props = $props();
+
+	let currentPage = $state(1);
+	let currentEpisodes: EpisodeType[] = $derived(
+		episodes.slice((currentPage - 1) * EPISODES_PER_PAGE, currentPage * EPISODES_PER_PAGE) ?? []
+	);
+	const totalPages = $derived(Math.ceil(episodes.length / EPISODES_PER_PAGE));
 </script>
 
 <section class="episodes">
 	<h2 class="visually-hidden">Episodes</h2>
-	{#if episodes.length}
+
+	{#if currentEpisodes.length}
 		<ul class="episodes__list">
-			{#each episodes as episode (episode.id)}
+			{#each currentEpisodes as episode (episode.id)}
 				<li><Episode {...episode} /></li>
 			{/each}
 		</ul>
@@ -26,9 +32,11 @@
 		<p>No results</p>
 	{/if}
 	{#if !showAll}
-		<a class="episodes__link heading-5" href="/episodes">View all <ArrowRight /></a>
-	{:else}
-		<Pagination totalPages={Math.ceil(total / EPISODES_PER_PAGE)} />
+		<a class="episodes__link heading-5" href="/episodes">
+			View all <ArrowRight />
+		</a>
+	{:else if totalPages > 1}
+		<Pagination bind:currentPage {totalPages} />
 	{/if}
 </section>
 

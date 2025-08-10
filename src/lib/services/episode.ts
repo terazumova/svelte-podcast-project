@@ -1,11 +1,10 @@
 import prisma from '$lib/server/prisma';
 
-export const getEpisodes = async (page: number, size: number, search?: string) => {
+export const getEpisodes = async ({ search, amount }: { search?: string; amount?: number }) => {
 	try {
 		return await prisma.episode.findMany({
 			where: { title: { contains: search, mode: 'insensitive' } },
-			skip: (page - 1) * size,
-			take: size,
+			take: amount,
 			orderBy: {
 				date: 'desc'
 			}

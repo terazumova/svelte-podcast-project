@@ -1,41 +1,73 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import Input from '$lib/components/common/Input.svelte';
 	import EpisodesList from '$lib/components/episodes/EpisodesList.svelte';
 	import PostList from '$lib/components/posts/PostList.svelte';
 	import TeamList from '$lib/components/team/TeamList.svelte';
-	import Search from '$lib/icons/Search.svelte';
-	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
+	import type { EpisodeType, PostType, TeamMemberType } from '$lib/types';
+	import SearchWorker from '$lib/search/worker?worker';
+	import Spinner from '$lib/components/common/Spinner.svelte';
+	import { Debounced } from 'runed';
 
-	type Props = {
-		data: PageData;
-	};
+	let search = $state<'idle' | 'ready'>('idle');
+	let searchTerm = $state('');
+	let results = $state<{
+		episodes: EpisodeType[];
+		posts: PostType[];
+		team: TeamMemberType[];
+	} | null>(null);
 
-	let { data }: Props = $props();
-	let search = $state('');
+	let searchWorker: Worker;
 
-	const handleSearch = () => goto(`?search=${search}&page=1`);
+	onMount(async () => {
+		searchWorker = new SearchWorker();
+
+		searchWorker.addEventListener('message', (e) => {
+			const { type, payload } = e.data;
+
+			type === 'ready' && (search = 'ready');
+			type === 'results' && (results = payload.results);
+		});
+
+		searchWorker.postMessage({ type: 'load' });
+	});
+
+	const debounced = new Debounced(() => searchTerm, 500);
+
+	$effect(() => {
+		if (search === 'ready') {
+			searchWorker.postMessage({ type: 'search', payload: { searchTerm: debounced.current } });
+		}
+	});
 </script>
 
 <div class="search-block">
 	<h1 class="visually-hidden">Search</h1>
 	<Input
 		name="text"
-		bind:value={search}
 		placeholder="Enter search text..."
 		errors={[]}
-		onkeydown={(e) => (e.key === 'Enter' ? handleSearch() : null)}
 		autocomplete="on"
-	>
-		{#snippet button()}
-			<button class="button" onclick={handleSearch}>
-				<Search />
-			</button>
-		{/snippet}</Input
-	>
-	<EpisodesList episodes={data.episodes} total={data.episodesTotal} />
-	<PostList posts={data.posts} />
-	<TeamList team={data.team} />
+		bind:value={searchTerm}
+	/>
+	{#if search !== 'ready'}
+		<Spinner />
+	{:else if results}
+		{#key results}
+			{#if results.episodes.length}
+				<EpisodesList episodes={results.episodes} />
+			{/if}
+			{#if results.posts.length}
+				<PostList posts={results.posts} />
+			{/if}
+			{#if results.team.length}
+				<TeamList team={results.team} />
+			{/if}
+			{#if !results.episodes.length && !results.posts.length && !results.team.length}
+				<p>No results</p>
+			{/if}
+		{/key}
+	{/if}
 </div>
 
 <style>
@@ -46,18 +78,5 @@
 
 	.search-block :global(.input-block__input) {
 		font-size: var(--fs-h5);
-	}
-
-	.search-block .button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-		border: none;
-		border-radius: 4px;
-		background-color: var(--color-purple);
-		min-width: 36px;
-		height: 36px;
-		color: var(--color-white);
 	}
 </style>

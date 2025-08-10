@@ -11,8 +11,8 @@
 <div class="team-member">
 	<img class="team-member__image" src={image} alt={name} width="300" height="300" />
 	<div class="team-member__content">
-		<p class="team-member__position heading-6">{position}</p>
-		<a href="/team/{slug}"><h3 class="team-member__name heading-3">{name}</h3></a>
+		<p class="team-member__position heading-6">{@html position}</p>
+		<a href="/team/{slug}"><h3 class="team-member__name heading-3">{@html name}</h3></a>
 		<ul class="team-member__links">
 			<li>
 				<a
@@ -55,23 +55,23 @@
 	}
 
 	.team-member__image {
+		border-radius: 4px 4px 0 0;
 		width: 300px;
 		height: 300px;
 		object-fit: cover;
-		border-radius: 4px 4px 0 0;
 	}
 
 	.team-member__content {
 		display: flex;
+		flex: 1;
 		flex-direction: column;
 		padding: 16px;
-		flex: 1;
 	}
 
 	.team-member__position {
-		text-transform: uppercase;
-		color: var(--color-purple);
 		margin-bottom: 8px;
+		color: var(--color-purple);
+		text-transform: uppercase;
 	}
 
 	.team-member__name {
